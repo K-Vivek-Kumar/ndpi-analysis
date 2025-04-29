@@ -1,0 +1,74 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/quic_frags_ch_out_of_order_same_packet_craziness.pcapng...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           13.55 MB     
+	Peak Memory:             13.55 MB     
+	Setup Time:              18 msec
+	Packet Processing Time:  4 msec
+
+Traffic statistics:
+	Ethernet bytes:        253464        (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            179           of 179 packets total
+	IP bytes:              249168        (avg pkt size 1392 bytes)
+	Unique flows:          113          
+	TCP Packets:           0            
+	UDP Packets:           179          
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       1358         
+	Packet Len < 64:       0            
+	Packet Len 64-128:     0            
+	Packet Len 128-256:    0            
+	Packet Len 256-1024:   0            
+	Packet Len 1024-1500:  179          
+	Packet Len > 1500:     0            
+	nDPI throughput:       40.94 K pps / 442.31 Mb/sec
+	Analysis begin:        19/May/2021 15:08:31
+	Analysis end:          20/May/2021 20:02:22
+	Traffic throughput:    0.00 pps / 19 b/sec
+	Traffic duration:      104031.414 sec
+	DPI Packets (UDP):     113           (1.00 pkts/flow)
+	Confidence: DPI (partial) 3             (flows)
+	Confidence: DPI        110           (flows)
+
+
+Detected protocols:
+	DataSaver            packets: 1             bytes: 1392          flows: 1            
+	YouTube              packets: 21            bytes: 29232         flows: 21           
+	Google               packets: 69            bytes: 96048         flows: 50           
+	QUIC                 packets: 3             bytes: 4176          flows: 2            
+	DoH_DoT              packets: 7             bytes: 9744          flows: 7            
+	PlayStore            packets: 3             bytes: 4176          flows: 3            
+	GoogleServices       packets: 71            bytes: 98832         flows: 25           
+	WhatsAppFiles        packets: 1             bytes: 1392          flows: 1            
+	GoogleCloud          packets: 3             bytes: 4176          flows: 3            
+
+
+Protocol statistics:
+	Safe                 packets: 3             bytes: 4176          flows: 3            
+	Acceptable           packets: 154           bytes: 214368        flows: 88           
+	Fun                  packets: 22            bytes: 30624         flows: 22           
+
+Risk stats [found 113 (100.0 %) flows with risks]:
+	Unidirectional Traffic                     113 [100.0 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

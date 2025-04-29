@@ -1,0 +1,70 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/telegram_voice.pcapng...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           11.26 MB     
+	Peak Memory:             11.26 MB     
+	Setup Time:              22 msec
+	Packet Processing Time:  0 msec
+
+Traffic statistics:
+	Ethernet bytes:        184385        (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            868           of 870 packets total
+	IP bytes:              163553        (avg pkt size 187 bytes)
+	Unique flows:          10           
+	TCP Packets:           0            
+	UDP Packets:           863          
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       648          
+	Packet Len < 64:       244          
+	Packet Len 64-128:     121          
+	Packet Len 128-256:    349          
+	Packet Len 256-1024:   154          
+	Packet Len 1024-1500:  0            
+	Packet Len > 1500:     0            
+	nDPI throughput:       1.29 M pps / 2.05 Gb/sec
+	Analysis begin:        18/Nov/2024 21:31:46
+	Analysis end:          18/Nov/2024 21:32:22
+	Traffic throughput:    24.07 pps / 39.94 Kb/sec
+	Traffic duration:      36.067 sec
+	DPI Packets (UDP):     45            (5.00 pkts/flow)
+	DPI Packets (other):   1             (1.00 pkts/flow)
+	Confidence: DPI        10            (flows)
+
+
+Detected protocols:
+	DNS                  packets: 2             bytes: 208           flows: 1            
+	MDNS                 packets: 2             bytes: 194           flows: 2            
+	ICMP                 packets: 5             bytes: 812           flows: 1            
+	Telegram             packets: 6             bytes: 564           flows: 1            
+	TelegramVoip         packets: 853           bytes: 161775        flows: 5            
+
+
+Protocol statistics:
+	Acceptable           packets: 868           bytes: 163553        flows: 10           
+
+Risk stats [found 4 (40.0 %) flows with risks]:
+	Known Proto on Non Std Port                  3 [60.0 %]
+	Susp Entropy                                 1 [20.0 %]
+	Unidirectional Traffic                       1 [20.0 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

@@ -1,0 +1,66 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/http-basic-auth.pcap...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           11.53 MB     
+	Peak Memory:             11.53 MB     
+	Setup Time:              18 msec
+	Packet Processing Time:  1 msec
+
+Traffic statistics:
+	Ethernet bytes:        370410        (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            688           of 688 packets total
+	IP bytes:              353898        (avg pkt size 514 bytes)
+	Unique flows:          25           
+	TCP Packets:           688          
+	UDP Packets:           0            
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       1480         
+	Packet Len < 64:       399          
+	Packet Len 64-128:     14           
+	Packet Len 128-256:    27           
+	Packet Len 256-1024:   67           
+	Packet Len 1024-1500:  181          
+	Packet Len > 1500:     0            
+	nDPI throughput:       671.22 K pps / 2.69 Gb/sec
+	Analysis begin:        15/Oct/2013 19:03:55
+	Analysis end:          15/Oct/2013 19:05:27
+	Traffic throughput:    7.41 pps / 31.17 Kb/sec
+	Traffic duration:      92.843 sec
+	Guessed flow protos:   9            
+	DPI Packets (TCP):     183           (7.32 pkts/flow)
+	Confidence: Match by port 9             (flows)
+	Confidence: DPI        16            (flows)
+
+
+Detected protocols:
+	HTTP                 packets: 688           bytes: 353898        flows: 25           
+
+
+Protocol statistics:
+	Acceptable           packets: 688           bytes: 353898        flows: 25           
+
+Risk stats [found 15 (60.0 %) flows with risks]:
+	Clear-Text Credentials                      14 [77.8 %]
+	Error Code                                   4 [22.2 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

@@ -1,0 +1,77 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/tor.pcap...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           11.27 MB     
+	Peak Memory:             11.27 MB     
+	Setup Time:              20 msec
+	Packet Processing Time:  1 msec
+
+Traffic statistics:
+	Ethernet bytes:        144962        (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       8460         
+	IP packets:            349           of 514 packets total
+	IP bytes:              136586        (avg pkt size 265 bytes)
+	Unique flows:          11           
+	TCP Packets:           332          
+	UDP Packets:           17           
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       1480         
+	Packet Len < 64:       150          
+	Packet Len 64-128:     27           
+	Packet Len 128-256:    25           
+	Packet Len 256-1024:   118          
+	Packet Len 1024-1500:  29           
+	Packet Len > 1500:     0            
+	nDPI throughput:       285.13 K pps / 903.57 Mb/sec
+	Analysis begin:        07/Nov/2013 16:24:20
+	Analysis end:          07/Nov/2013 16:34:36
+	Traffic throughput:    0.57 pps / 1.84 Kb/sec
+	Traffic duration:      615.999 sec
+	Guessed flow protos:   1            
+	DPI Packets (TCP):     43            (5.38 pkts/flow)
+	DPI Packets (UDP):     3             (1.00 pkts/flow)
+	Confidence: Match by port 1             (flows)
+	Confidence: DPI        10            (flows)
+
+
+Detected protocols:
+	SMBv1                packets: 1             bytes: 252           flows: 1            
+	TLS                  packets: 220           bytes: 93832         flows: 5            
+	DHCPV6               packets: 6             bytes: 906           flows: 1            
+	Dropbox              packets: 10            bytes: 1860          flows: 1            
+	Tor                  packets: 112           bytes: 39736         flows: 3            
+
+
+Protocol statistics:
+	Safe                 packets: 220           bytes: 93832         flows: 5            
+	Acceptable           packets: 16            bytes: 2766          flows: 2            
+	Potentially Dangerous packets: 112           bytes: 39736         flows: 3            
+	Dangerous            packets: 1             bytes: 252           flows: 1            
+
+Risk stats [found 8 (72.7 %) flows with risks]:
+	Obsolete TLS (v1.1 or older)                 7 [41.2 %]
+	Susp DGA Domain name                         3 [17.6 %]
+	Unsafe Protocol                              3 [17.6 %]
+	TLS Cert About To Expire                     3 [17.6 %]
+	Unidirectional Traffic                       1 [ 5.9 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

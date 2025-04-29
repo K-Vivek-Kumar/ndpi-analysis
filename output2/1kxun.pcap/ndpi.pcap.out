@@ -1,0 +1,98 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/1kxun.pcap...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           14.63 MB     
+	Peak Memory:             14.63 MB     
+	Setup Time:              21 msec
+	Packet Processing Time:  4 msec
+
+Traffic statistics:
+	Ethernet bytes:        2569126       (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            1723          of 1723 packets total
+	IP bytes:              2527774       (avg pkt size 1467 bytes)
+	Unique flows:          197          
+	TCP Packets:           1381         
+	UDP Packets:           342          
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       37472        
+	Packet Len < 64:       482          
+	Packet Len 64-128:     24           
+	Packet Len 128-256:    174          
+	Packet Len 256-1024:   299          
+	Packet Len 1024-1500:  464          
+	Packet Len > 1500:     280          
+	nDPI throughput:       356.65 K pps / 3.96 Gb/sec
+	Analysis begin:        02/Aug/2016 07:49:33
+	Analysis end:          05/Jun/2022 04:57:16
+	Traffic throughput:    0.00 pps / 0 b/sec
+	Traffic duration:      184280864.000 sec
+	Guessed flow protos:   6            
+	DPI Packets (TCP):     408           (4.16 pkts/flow)
+	DPI Packets (UDP):     120           (1.21 pkts/flow)
+	Confidence: Unknown    9             (flows)
+	Confidence: Match by port 6             (flows)
+	Confidence: DPI        182           (flows)
+
+
+Detected protocols:
+	Unknown              packets: 19            bytes: 5564          flows: 9            
+	DNS                  packets: 17            bytes: 1719          flows: 6            
+	HTTP                 packets: 249           bytes: 355379        flows: 34           
+	MDNS                 packets: 1             bytes: 82            flows: 1            
+	NTP                  packets: 1             bytes: 90            flows: 1            
+	NetBIOS              packets: 26            bytes: 2392          flows: 6            
+	SSDP                 packets: 143           bytes: 36951         flows: 13           
+	SMBv1                packets: 5             bytes: 1197          flows: 2            
+	DHCP                 packets: 24            bytes: 8208          flows: 5            
+	QQ                   packets: 30            bytes: 6617          flows: 3            
+	TLS                  packets: 124           bytes: 28754         flows: 9            
+	DHCPV6               packets: 10            bytes: 980           flows: 3            
+	Google               packets: 28            bytes: 53166         flows: 3            
+	LLMNR                packets: 91            bytes: 6931          flows: 48           
+	PlayStore            packets: 2             bytes: 1359          flows: 1            
+	GoogleServices       packets: 17            bytes: 30330         flows: 1            
+	MpegDash             packets: 1             bytes: 299           flows: 1            
+	1kxun                packets: 902           bytes: 1968236       flows: 44           
+	Line                 packets: 28            bytes: 18656         flows: 2            
+	Mikrotik             packets: 5             bytes: 864           flows: 5            
+
+
+Protocol statistics:
+	Safe                 packets: 126           bytes: 30113         flows: 10           
+	Acceptable           packets: 640           bytes: 515748        flows: 128          
+	Fun                  packets: 933           bytes: 1975152       flows: 48           
+	Dangerous            packets: 5             bytes: 1197          flows: 2            
+	Unrated              packets: 19            bytes: 5564          flows: 9            
+
+Risk stats [found 29 (14.7 %) flows with risks]:
+	Known Proto on Non Std Port                  5 [11.9 %]
+	Weak TLS Cipher                              4 [ 9.5 %]
+	HTTP Susp User-Agent                         5 [11.9 %]
+	HTTP/TLS/QUIC Numeric Hostname/SNI           8 [19.0 %]
+	TLS (probably) Not Carrying HTTPS            4 [ 9.5 %]
+	Non-Printable/Invalid Chars Detected         6 [14.3 %]
+	Error Code                                   3 [ 7.1 %]
+	Unidirectional Traffic                       6 [14.3 %]
+	Binary File/Data Transfer (Attempt)          1 [ 2.4 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

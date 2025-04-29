@@ -1,0 +1,75 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/reddit.pcap...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           12.40 MB     
+	Peak Memory:             12.40 MB     
+	Setup Time:              21 msec
+	Packet Processing Time:  4 msec
+
+Traffic statistics:
+	Ethernet bytes:        760604        (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            1942          of 1942 packets total
+	IP bytes:              713996        (avg pkt size 367 bytes)
+	Unique flows:          60           
+	TCP Packets:           1942         
+	UDP Packets:           0            
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       2808         
+	Packet Len < 64:       1087         
+	Packet Len 64-128:     179          
+	Packet Len 128-256:    74           
+	Packet Len 256-1024:   282          
+	Packet Len 1024-1500:  310          
+	Packet Len > 1500:     10           
+	nDPI throughput:       450.06 K pps / 1.31 Gb/sec
+	Analysis begin:        13/Nov/2020 23:51:24
+	Analysis end:          13/Nov/2020 23:51:38
+	Traffic throughput:    137.23 pps / 419.90 Kb/sec
+	Traffic duration:      14.151 sec
+	Guessed flow protos:   1            
+	DPI Packets (TCP):     445           (7.42 pkts/flow)
+	Confidence: Match by port 1             (flows)
+	Confidence: DPI        59            (flows)
+
+
+Detected protocols:
+	TLS                  packets: 175           bytes: 62439         flows: 7            
+	ADS_Analytic_Track   packets: 127           bytes: 68146         flows: 3            
+	Twitter              packets: 108           bytes: 33623         flows: 3            
+	YouTube              packets: 103           bytes: 37264         flows: 3            
+	Google               packets: 567           bytes: 201496        flows: 19           
+	Reddit               packets: 522           bytes: 181584        flows: 20           
+	GoogleServices       packets: 340           bytes: 129444        flows: 5            
+
+
+Protocol statistics:
+	Safe                 packets: 175           bytes: 62439         flows: 7            
+	Acceptable           packets: 907           bytes: 330940        flows: 24           
+	Fun                  packets: 733           bytes: 252471        flows: 26           
+	Tracker/Ads          packets: 127           bytes: 68146         flows: 3            
+
+Risk stats [found 1 (1.7 %) flows with risks]:
+	TCP Connection Issues                        1 [50.0 %]
+	Probing Attempt                              1 [50.0 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

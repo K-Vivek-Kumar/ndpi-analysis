@@ -1,0 +1,65 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/xss.pcap...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           11.06 MB     
+	Peak Memory:             11.06 MB     
+	Setup Time:              17 msec
+	Packet Processing Time:  0 msec
+
+Traffic statistics:
+	Ethernet bytes:        3473          (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            11            of 11 packets total
+	IP bytes:              3209          (avg pkt size 291 bytes)
+	Unique flows:          2            
+	TCP Packets:           11           
+	UDP Packets:           0            
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       1480         
+	Packet Len < 64:       8            
+	Packet Len 64-128:     0            
+	Packet Len 128-256:    0            
+	Packet Len 256-1024:   2            
+	Packet Len 1024-1500:  1            
+	Packet Len > 1500:     0            
+	nDPI throughput:       32.45 K pps / 78.16 Mb/sec
+	Analysis begin:        15/Jun/2022 03:21:29
+	Analysis end:          15/Jun/2022 03:21:29
+	Traffic throughput:    1.04 K pps / 2.49 Mb/sec
+	Traffic duration:      0.011 sec
+	Guessed flow protos:   1            
+	DPI Packets (TCP):     9             (4.50 pkts/flow)
+	Confidence: Match by port 1             (flows)
+	Confidence: DPI        1             (flows)
+
+
+Detected protocols:
+	HTTP                 packets: 11            bytes: 3209          flows: 2            
+
+
+Protocol statistics:
+	Acceptable           packets: 11            bytes: 3209          flows: 2            
+
+Risk stats [found 1 (50.0 %) flows with risks]:
+	HTTP/TLS/QUIC Numeric Hostname/SNI           1 [100.0 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

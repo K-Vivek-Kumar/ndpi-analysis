@@ -1,0 +1,72 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/anydesk.pcapng...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           11.15 MB     
+	Peak Memory:             11.15 MB     
+	Setup Time:              21 msec
+	Packet Processing Time:  0 msec
+
+Traffic statistics:
+	Ethernet bytes:        50293         (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            174           of 174 packets total
+	IP bytes:              46117         (avg pkt size 265 bytes)
+	Unique flows:          7            
+	TCP Packets:           170          
+	UDP Packets:           4            
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       3946         
+	Packet Len < 64:       103          
+	Packet Len 64-128:     37           
+	Packet Len 128-256:    6            
+	Packet Len 256-1024:   9            
+	Packet Len 1024-1500:  18           
+	Packet Len > 1500:     1            
+	nDPI throughput:       214.55 K pps / 473.13 Mb/sec
+	Analysis begin:        05/Jun/2020 12:59:58
+	Analysis end:          13/Sep/2022 23:06:47
+	Traffic throughput:    0.00 pps / 0 b/sec
+	Traffic duration:      71748408.000 sec
+	DPI Packets (TCP):     34            (6.80 pkts/flow)
+	DPI Packets (UDP):     4             (2.00 pkts/flow)
+	Confidence: DPI        7             (flows)
+
+
+Detected protocols:
+	DNS                  packets: 4             bytes: 392           flows: 2            
+	TLS                  packets: 20            bytes: 1717          flows: 1            
+	AnyDesk              packets: 150           bytes: 44008         flows: 4            
+
+
+Protocol statistics:
+	Safe                 packets: 20            bytes: 1717          flows: 1            
+	Acceptable           packets: 154           bytes: 44400         flows: 6            
+
+Risk stats [found 5 (71.4 %) flows with risks]:
+	Known Proto on Non Std Port                  4 [23.5 %]
+	Weak TLS Cipher                              1 [ 5.9 %]
+	TLS (probably) Not Carrying HTTPS            3 [17.6 %]
+	Missing SNI TLS Extn                         4 [23.5 %]
+	Desktop/File Sharing                         4 [23.5 %]
+	Uncommon TLS ALPN                            1 [ 5.9 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

@@ -1,0 +1,86 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/wechat.pcap...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           12.56 MB     
+	Peak Memory:             12.56 MB     
+	Setup Time:              18 msec
+	Packet Processing Time:  4 msec
+
+Traffic statistics:
+	Ethernet bytes:        707438        (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            1672          of 1672 packets total
+	IP bytes:              667310        (avg pkt size 399 bytes)
+	Unique flows:          103          
+	TCP Packets:           1433         
+	UDP Packets:           211          
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       8257         
+	Packet Len < 64:       1036         
+	Packet Len 64-128:     38           
+	Packet Len 128-256:    106          
+	Packet Len 256-1024:   175          
+	Packet Len 1024-1500:  291          
+	Packet Len > 1500:     26           
+	nDPI throughput:       383.40 K pps / 1.21 Gb/sec
+	Analysis begin:        14/Apr/2017 16:25:37
+	Analysis end:          14/Apr/2017 17:31:31
+	Traffic throughput:    0.42 pps / 1.40 Kb/sec
+	Traffic duration:      3953.969 sec
+	Guessed flow protos:   25           
+	DPI Packets (TCP):     448           (7.59 pkts/flow)
+	DPI Packets (UDP):     70            (1.89 pkts/flow)
+	DPI Packets (other):   7             (1.00 pkts/flow)
+	Confidence: Match by port 24            (flows)
+	Confidence: DPI        78            (flows)
+	Confidence: Match by IP 1             (flows)
+
+
+Detected protocols:
+	DNS                  packets: 33            bytes: 4085          flows: 20           
+	HTTP                 packets: 70            bytes: 4620          flows: 8            
+	MDNS                 packets: 116           bytes: 10672         flows: 4            
+	NTP                  packets: 1             bytes: 90            flows: 1            
+	NetBIOS              packets: 9             bytes: 828           flows: 1            
+	SMBv1                packets: 3             bytes: 751           flows: 1            
+	DHCP                 packets: 1             bytes: 342           flows: 1            
+	QQ                   packets: 24            bytes: 8792          flows: 1            
+	IGMP                 packets: 24            bytes: 1280          flows: 4            
+	TLS                  packets: 305           bytes: 89209         flows: 22           
+	ICMPV6               packets: 4             bytes: 328           flows: 3            
+	Google               packets: 77            bytes: 20809         flows: 4            
+	LLMNR                packets: 12            bytes: 944           flows: 6            
+	WeChat               packets: 980           bytes: 519748        flows: 26           
+	GoogleDocs           packets: 13            bytes: 4812          flows: 1            
+
+
+Protocol statistics:
+	Safe                 packets: 305           bytes: 89209         flows: 22           
+	Acceptable           packets: 360           bytes: 48810         flows: 53           
+	Fun                  packets: 1004          bytes: 528540        flows: 27           
+	Dangerous            packets: 3             bytes: 751           flows: 1            
+
+Risk stats [found 29 (28.2 %) flows with risks]:
+	Weak TLS Cipher                              1 [ 3.4 %]
+	Unidirectional Traffic                      28 [96.6 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

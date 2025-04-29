@@ -1,0 +1,75 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/tor-browser.pcap...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           11.24 MB     
+	Peak Memory:             11.24 MB     
+	Setup Time:              19 msec
+	Packet Processing Time:  0 msec
+
+Traffic statistics:
+	Ethernet bytes:        82947         (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            165           of 169 packets total
+	IP bytes:              78987         (avg pkt size 467 bytes)
+	Unique flows:          9            
+	TCP Packets:           144          
+	UDP Packets:           2            
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       2098         
+	Packet Len < 64:       54           
+	Packet Len 64-128:     11           
+	Packet Len 128-256:    4            
+	Packet Len 256-1024:   75           
+	Packet Len 1024-1500:  16           
+	Packet Len > 1500:     5            
+	nDPI throughput:       187.71 K pps / 719.95 Mb/sec
+	Analysis begin:        24/Feb/2025 21:51:41
+	Analysis end:          24/Feb/2025 21:52:11
+	Traffic throughput:    5.64 pps / 22.17 Kb/sec
+	Traffic duration:      29.235 sec
+	DPI Packets (TCP):     58            (8.29 pkts/flow)
+	DPI Packets (UDP):     2             (2.00 pkts/flow)
+	DPI Packets (other):   1             (1.00 pkts/flow)
+	Confidence: DPI        9             (flows)
+
+
+Detected protocols:
+	DNS                  packets: 2             bytes: 295           flows: 1            
+	ICMP                 packets: 19            bytes: 10194         flows: 1            
+	TLS                  packets: 2             bytes: 168           flows: 1            
+	Tor                  packets: 113           bytes: 57510         flows: 5            
+	Microsoft            packets: 29            bytes: 10820         flows: 1            
+
+
+Protocol statistics:
+	Safe                 packets: 31            bytes: 10988         flows: 2            
+	Acceptable           packets: 21            bytes: 10489         flows: 2            
+	Potentially Dangerous packets: 113           bytes: 57510         flows: 5            
+
+Risk stats [found 6 (66.7 %) flows with risks]:
+	TLS (probably) Not Carrying HTTPS            5 [33.3 %]
+	Susp DGA Domain name                         3 [20.0 %]
+	Unsafe Protocol                              5 [33.3 %]
+	Susp Entropy                                 1 [ 6.7 %]
+	Unidirectional Traffic                       1 [ 6.7 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

@@ -1,0 +1,88 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/whatsapp_login_call.pcap...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           11.58 MB     
+	Peak Memory:             11.58 MB     
+	Setup Time:              20 msec
+	Packet Processing Time:  1 msec
+
+Traffic statistics:
+	Ethernet bytes:        223130        (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            1251          of 1253 packets total
+	IP bytes:              193106        (avg pkt size 154 bytes)
+	Unique flows:          57           
+	TCP Packets:           409          
+	UDP Packets:           832          
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       1472         
+	Packet Len < 64:       645          
+	Packet Len 64-128:     344          
+	Packet Len 128-256:    124          
+	Packet Len 256-1024:   118          
+	Packet Len 1024-1500:  20           
+	Packet Len > 1500:     0            
+	nDPI throughput:       763.27 K pps / 1.01 Gb/sec
+	Analysis begin:        26/May/2015 01:00:22
+	Analysis end:          26/May/2015 01:02:41
+	Traffic throughput:    8.96 pps / 12.48 Kb/sec
+	Traffic duration:      139.676 sec
+	Guessed flow protos:   20           
+	DPI Packets (TCP):     93            (3.44 pkts/flow)
+	DPI Packets (UDP):     127           (4.38 pkts/flow)
+	DPI Packets (other):   1             (1.00 pkts/flow)
+	Confidence: Match by port 20            (flows)
+	Confidence: DPI (cache) 2             (flows)
+	Confidence: DPI        35            (flows)
+
+
+Detected protocols:
+	DNS                  packets: 4             bytes: 610           flows: 2            
+	HTTP                 packets: 11            bytes: 726           flows: 3            
+	MDNS                 packets: 8             bytes: 952           flows: 4            
+	DHCP                 packets: 10            bytes: 3420          flows: 1            
+	WhatsAppCall         packets: 803           bytes: 102942        flows: 20           
+	IMAPS                packets: 17            bytes: 1998          flows: 1            
+	ICMP                 packets: 10            bytes: 700           flows: 1            
+	TLS                  packets: 56            bytes: 3217          flows: 18           
+	Dropbox              packets: 4             bytes: 2176          flows: 1            
+	Apple                packets: 38            bytes: 17220         flows: 1            
+	WhatsApp             packets: 180           bytes: 24874         flows: 1            
+	Spotify              packets: 3             bytes: 258           flows: 1            
+	AppleStore           packets: 85            bytes: 28087         flows: 2            
+	ApplePush            packets: 22            bytes: 5926          flows: 1            
+
+
+Protocol statistics:
+	Safe                 packets: 196           bytes: 50522         flows: 22           
+	Acceptable           packets: 1052          bytes: 142326        flows: 34           
+	Fun                  packets: 3             bytes: 258           flows: 1            
+
+Risk stats [found 9 (15.8 %) flows with risks]:
+	Known Proto on Non Std Port                  4 [26.7 %]
+	Weak TLS Cipher                              3 [20.0 %]
+	TLS (probably) Not Carrying HTTPS            3 [20.0 %]
+	Unidirectional Traffic                       3 [20.0 %]
+	TCP Connection Issues                        1 [ 6.7 %]
+	Probing Attempt                              1 [ 6.7 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

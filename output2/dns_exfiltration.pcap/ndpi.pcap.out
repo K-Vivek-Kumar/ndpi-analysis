@@ -1,0 +1,64 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/dns_exfiltration.pcap...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           11.12 MB     
+	Peak Memory:             11.12 MB     
+	Setup Time:              19 msec
+	Packet Processing Time:  0 msec
+
+Traffic statistics:
+	Ethernet bytes:        80745         (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            300           of 300 packets total
+	IP bytes:              73545         (avg pkt size 245 bytes)
+	Unique flows:          1            
+	TCP Packets:           0            
+	UDP Packets:           300          
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       352          
+	Packet Len < 64:       0            
+	Packet Len 64-128:     119          
+	Packet Len 128-256:    6            
+	Packet Len 256-1024:   175          
+	Packet Len 1024-1500:  0            
+	Packet Len > 1500:     0            
+	nDPI throughput:       511.07 K pps / 1.02 Gb/sec
+	Analysis begin:        06/Feb/2020 14:05:46
+	Analysis end:          06/Feb/2020 14:06:46
+	Traffic throughput:    5.00 pps / 10.52 Kb/sec
+	Traffic duration:      59.990 sec
+	DPI Packets (UDP):     2             (2.00 pkts/flow)
+	Confidence: DPI        1             (flows)
+
+
+Detected protocols:
+	DNS                  packets: 300           bytes: 73545         flows: 1            
+
+
+Protocol statistics:
+	Acceptable           packets: 300           bytes: 73545         flows: 1            
+
+Risk stats [found 1 (100.0 %) flows with risks]:
+	Susp DGA Domain name                         1 [50.0 %]
+	Risky Domain Name                            1 [50.0 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

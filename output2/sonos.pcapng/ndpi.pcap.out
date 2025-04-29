@@ -1,0 +1,67 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/sonos.pcapng...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           11.09 MB     
+	Peak Memory:             11.09 MB     
+	Setup Time:              21 msec
+	Packet Processing Time:  0 msec
+
+Traffic statistics:
+	Ethernet bytes:        30796         (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            61            of 61 packets total
+	IP bytes:              29332         (avg pkt size 480 bytes)
+	Unique flows:          2            
+	TCP Packets:           44           
+	UDP Packets:           17           
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       1480         
+	Packet Len < 64:       31           
+	Packet Len 64-128:     3            
+	Packet Len 128-256:    3            
+	Packet Len 256-1024:   5            
+	Packet Len 1024-1500:  19           
+	Packet Len > 1500:     0            
+	nDPI throughput:       104.99 K pps / 404.40 Mb/sec
+	Analysis begin:        24/Sep/2024 13:52:44
+	Analysis end:          10/Oct/2024 01:13:40
+	Traffic throughput:    0.00 pps / 0 b/sec
+	Traffic duration:      1336856.000 sec
+	DPI Packets (TCP):     10            (10.00 pkts/flow)
+	DPI Packets (UDP):     1             (1.00 pkts/flow)
+	Confidence: DPI        2             (flows)
+
+
+Detected protocols:
+	Sonos                packets: 61            bytes: 29332         flows: 2            
+
+
+Protocol statistics:
+	Fun                  packets: 61            bytes: 29332         flows: 2            
+
+Risk stats [found 1 (50.0 %) flows with risks]:
+	Known Proto on Non Std Port                  1 [25.0 %]
+	Weak TLS Cipher                              1 [25.0 %]
+	TLS Cert Mismatch                            1 [25.0 %]
+	TLS (probably) Not Carrying HTTPS            1 [25.0 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

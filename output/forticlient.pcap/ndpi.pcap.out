@@ -1,0 +1,65 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/forticlient.pcap...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           11.51 MB     
+	Peak Memory:             11.51 MB     
+	Setup Time:              18 msec
+	Packet Processing Time:  1 msec
+
+Traffic statistics:
+	Ethernet bytes:        478931        (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            2000          of 2000 packets total
+	IP bytes:              430931        (avg pkt size 215 bytes)
+	Unique flows:          5            
+	TCP Packets:           2000         
+	UDP Packets:           0            
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       1472         
+	Packet Len < 64:       810          
+	Packet Len 64-128:     506          
+	Packet Len 128-256:    463          
+	Packet Len 256-1024:   119          
+	Packet Len 1024-1500:  102          
+	Packet Len > 1500:     0            
+	nDPI throughput:       1.71 M pps / 3.06 Gb/sec
+	Analysis begin:        15/May/2021 13:56:43
+	Analysis end:          15/May/2021 13:57:02
+	Traffic throughput:    107.01 pps / 200.20 Kb/sec
+	Traffic duration:      18.690 sec
+	DPI Packets (TCP):     35            (7.00 pkts/flow)
+	Confidence: DPI (cache) 4             (flows)
+	Confidence: DPI        1             (flows)
+
+
+Detected protocols:
+	FortiClient          packets: 2000          bytes: 430931        flows: 5            
+
+
+Protocol statistics:
+	Safe                 packets: 2000          bytes: 430931        flows: 5            
+
+Risk stats [found 5 (100.0 %) flows with risks]:
+	Known Proto on Non Std Port                  5 [50.0 %]
+	TLS (probably) Not Carrying HTTPS            5 [50.0 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

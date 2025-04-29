@@ -1,0 +1,78 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/netflix.pcap...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           12.50 MB     
+	Peak Memory:             12.50 MB     
+	Setup Time:              21 msec
+	Packet Processing Time:  3 msec
+
+Traffic statistics:
+	Ethernet bytes:        1049448       (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            1793          of 1793 packets total
+	IP bytes:              1006416       (avg pkt size 561 bytes)
+	Unique flows:          61           
+	TCP Packets:           1748         
+	UDP Packets:           44           
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       1480         
+	Packet Len < 64:       957          
+	Packet Len 64-128:     78           
+	Packet Len 128-256:    55           
+	Packet Len 256-1024:   148          
+	Packet Len 1024-1500:  555          
+	Packet Len > 1500:     0            
+	nDPI throughput:       516.12 K pps / 2.25 Gb/sec
+	Analysis begin:        13/Jan/2017 20:20:30
+	Analysis end:          13/Jan/2017 20:22:00
+	Traffic throughput:    19.94 pps / 91.16 Kb/sec
+	Traffic duration:      89.937 sec
+	Guessed flow protos:   1            
+	DPI Packets (TCP):     288           (6.13 pkts/flow)
+	DPI Packets (UDP):     27            (2.08 pkts/flow)
+	DPI Packets (other):   1             (1.00 pkts/flow)
+	Confidence: Match by port 1             (flows)
+	Confidence: DPI        60            (flows)
+
+
+Detected protocols:
+	DNS                  packets: 28            bytes: 4469          flows: 12           
+	HTTP                 packets: 814           bytes: 494949        flows: 18           
+	SSDP                 packets: 16            bytes: 2648          flows: 1            
+	IGMP                 packets: 1             bytes: 60            flows: 1            
+	TLS                  packets: 2             bytes: 126           flows: 1            
+	NetFlix              packets: 932           bytes: 504164        flows: 28           
+
+
+Protocol statistics:
+	Safe                 packets: 2             bytes: 126           flows: 1            
+	Acceptable           packets: 859           bytes: 502126        flows: 32           
+	Fun                  packets: 932           bytes: 504164        flows: 28           
+
+Risk stats [found 32 (52.5 %) flows with risks]:
+	HTTP/TLS/QUIC Numeric Hostname/SNI          18 [36.0 %]
+	TLS (probably) Not Carrying HTTPS           12 [24.0 %]
+	HTTP Susp Content                            1 [ 2.0 %]
+	Unidirectional Traffic                       1 [ 2.0 %]
+	Binary File/Data Transfer (Attempt)         18 [36.0 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

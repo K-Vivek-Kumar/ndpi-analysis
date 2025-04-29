@@ -1,0 +1,69 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/smtp-starttls.pcap...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           11.09 MB     
+	Peak Memory:             11.09 MB     
+	Setup Time:              21 msec
+	Packet Processing Time:  0 msec
+
+Traffic statistics:
+	Ethernet bytes:        16488         (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            69            of 69 packets total
+	IP bytes:              14832         (avg pkt size 214 bytes)
+	Unique flows:          2            
+	TCP Packets:           69           
+	UDP Packets:           0            
+	VLAN Packets:          33           
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       1450         
+	Packet Len < 64:       37           
+	Packet Len 64-128:     15           
+	Packet Len 128-256:    9            
+	Packet Len 256-1024:   4            
+	Packet Len 1024-1500:  4            
+	Packet Len > 1500:     0            
+	nDPI throughput:       147.44 K pps / 268.79 Mb/sec
+	Analysis begin:        26/Dec/2013 05:48:44
+	Analysis end:          26/Apr/2018 18:19:28
+	Traffic throughput:    0.00 pps / 0 b/sec
+	Traffic duration:      136729840.000 sec
+	DPI Packets (TCP):     26            (13.00 pkts/flow)
+	Confidence: DPI        2             (flows)
+
+
+Detected protocols:
+	SMTPS                packets: 33            bytes: 6429          flows: 1            
+	Google               packets: 36            bytes: 8403          flows: 1            
+
+
+Protocol statistics:
+	Safe                 packets: 33            bytes: 6429          flows: 1            
+	Acceptable           packets: 36            bytes: 8403          flows: 1            
+
+Risk stats [found 2 (100.0 %) flows with risks]:
+	Self-signed Cert                             1 [20.0 %]
+	Obsolete TLS (v1.1 or older)                 1 [20.0 %]
+	Weak TLS Cipher                              1 [20.0 %]
+	TLS (probably) Not Carrying HTTPS            1 [20.0 %]
+	TLS Susp Extn                                1 [20.0 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

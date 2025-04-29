@@ -1,0 +1,69 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/opera-vpn.pcapng...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           12.97 MB     
+	Peak Memory:             12.97 MB     
+	Setup Time:              20 msec
+	Packet Processing Time:  6 msec
+
+Traffic statistics:
+	Ethernet bytes:        1475682       (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            3200          of 3200 packets total
+	IP bytes:              1398882       (avg pkt size 437 bytes)
+	Unique flows:          62           
+	TCP Packets:           3200         
+	UDP Packets:           0            
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       1472         
+	Packet Len < 64:       1687         
+	Packet Len 64-128:     301          
+	Packet Len 128-256:    110          
+	Packet Len 256-1024:   367          
+	Packet Len 1024-1500:  735          
+	Packet Len > 1500:     0            
+	nDPI throughput:       506.89 K pps / 1.74 Gb/sec
+	Analysis begin:        09/Sep/2023 21:39:12
+	Analysis end:          09/Sep/2023 21:39:20
+	Traffic throughput:    407.82 pps / 1.43 Mb/sec
+	Traffic duration:      7.847 sec
+	Guessed flow protos:   1            
+	DPI Packets (TCP):     369           (5.95 pkts/flow)
+	Confidence: Match by port 1             (flows)
+	Confidence: DPI        61            (flows)
+
+
+Detected protocols:
+	TLS                  packets: 3             bytes: 206           flows: 1            
+	OperaVPN             packets: 3197          bytes: 1398676       flows: 61           
+
+
+Protocol statistics:
+	Safe                 packets: 3             bytes: 206           flows: 1            
+	Acceptable           packets: 3197          bytes: 1398676       flows: 61           
+
+Risk stats [found 2 (3.2 %) flows with risks]:
+	TLS (probably) Not Carrying HTTPS            1 [33.3 %]
+	TCP Connection Issues                        1 [33.3 %]
+	Probing Attempt                              1 [33.3 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

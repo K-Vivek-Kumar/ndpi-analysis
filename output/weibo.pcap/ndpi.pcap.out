@@ -1,0 +1,78 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/weibo.pcap...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           11.55 MB     
+	Peak Memory:             11.55 MB     
+	Setup Time:              18 msec
+	Packet Processing Time:  1 msec
+
+Traffic statistics:
+	Ethernet bytes:        279507        (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            498           of 498 packets total
+	IP bytes:              267555        (avg pkt size 537 bytes)
+	Unique flows:          44           
+	TCP Packets:           454          
+	UDP Packets:           44           
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       4340         
+	Packet Len < 64:       292          
+	Packet Len 64-128:     8            
+	Packet Len 128-256:    11           
+	Packet Len 256-1024:   55           
+	Packet Len 1024-1500:  123          
+	Packet Len > 1500:     9            
+	nDPI throughput:       463.26 K pps / 1.94 Gb/sec
+	Analysis begin:        13/May/2016 03:07:47
+	Analysis end:          13/May/2016 03:07:53
+	Traffic throughput:    81.79 pps / 358.61 Kb/sec
+	Traffic duration:      6.089 sec
+	Guessed flow protos:   21           
+	DPI Packets (TCP):     100           (3.33 pkts/flow)
+	DPI Packets (UDP):     35            (2.50 pkts/flow)
+	Confidence: Match by port 21            (flows)
+	Confidence: DPI        23            (flows)
+
+
+Detected protocols:
+	DNS                  packets: 21            bytes: 2265          flows: 12           
+	HTTP                 packets: 10            bytes: 676           flows: 4            
+	TLS                  packets: 23            bytes: 1578          flows: 15           
+	QUIC                 packets: 23            bytes: 4118          flows: 2            
+	Sina                 packets: 329           bytes: 219379        flows: 8            
+	Alibaba              packets: 4             bytes: 448           flows: 1            
+	SinaWeibo            packets: 88            bytes: 39091         flows: 2            
+
+
+Protocol statistics:
+	Safe                 packets: 23            bytes: 1578          flows: 15           
+	Acceptable           packets: 58            bytes: 7507          flows: 19           
+	Fun                  packets: 417           bytes: 258470        flows: 10           
+
+Risk stats [found 15 (34.1 %) flows with risks]:
+	Susp DGA Domain name                         1 [ 6.2 %]
+	Risky Domain Name                            1 [ 6.2 %]
+	Susp Entropy                                 1 [ 6.2 %]
+	Unidirectional Traffic                      12 [75.0 %]
+	Minor Issues                                 1 [ 6.2 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

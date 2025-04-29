@@ -1,0 +1,73 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/whatsapp_login_chat.pcap...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           11.13 MB     
+	Peak Memory:             11.13 MB     
+	Setup Time:              18 msec
+	Packet Processing Time:  0 msec
+
+Traffic statistics:
+	Ethernet bytes:        32369         (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            93            of 93 packets total
+	IP bytes:              30137         (avg pkt size 324 bytes)
+	Unique flows:          9            
+	TCP Packets:           80           
+	UDP Packets:           13           
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       1460         
+	Packet Len < 64:       43           
+	Packet Len 64-128:     9            
+	Packet Len 128-256:    5            
+	Packet Len 256-1024:   29           
+	Packet Len 1024-1500:  7            
+	Packet Len > 1500:     0            
+	nDPI throughput:       165.78 K pps / 440.21 Mb/sec
+	Analysis begin:        26/May/2015 01:02:57
+	Analysis end:          26/May/2015 01:03:51
+	Traffic throughput:    1.73 pps / 4.71 Kb/sec
+	Traffic duration:      53.667 sec
+	DPI Packets (TCP):     17            (5.67 pkts/flow)
+	DPI Packets (UDP):     7             (1.17 pkts/flow)
+	Confidence: DPI        9             (flows)
+
+
+Detected protocols:
+	DNS                  packets: 2             bytes: 280           flows: 1            
+	MDNS                 packets: 2             bytes: 202           flows: 2            
+	DHCP                 packets: 6             bytes: 2052          flows: 1            
+	TLS                  packets: 50            bytes: 23466         flows: 2            
+	Dropbox              packets: 2             bytes: 1088          flows: 1            
+	WhatsApp             packets: 30            bytes: 2963          flows: 1            
+	Spotify              packets: 1             bytes: 86            flows: 1            
+
+
+Protocol statistics:
+	Safe                 packets: 50            bytes: 23466         flows: 2            
+	Acceptable           packets: 42            bytes: 6585          flows: 6            
+	Fun                  packets: 1             bytes: 86            flows: 1            
+
+Risk stats [found 1 (11.1 %) flows with risks]:
+	Known Proto on Non Std Port                  1 [50.0 %]
+	Unidirectional Traffic                       1 [50.0 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

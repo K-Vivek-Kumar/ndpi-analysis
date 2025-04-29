@@ -1,0 +1,92 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/alexa-app.pcapng...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           13.69 MB     
+	Peak Memory:             13.69 MB     
+	Setup Time:              21 msec
+	Packet Processing Time:  8 msec
+
+Traffic statistics:
+	Ethernet bytes:        1243521       (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            3074          of 3103 packets total
+	IP bytes:              1169745       (avg pkt size 376 bytes)
+	Unique flows:          160          
+	TCP Packets:           2993         
+	UDP Packets:           65           
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       1480         
+	Packet Len < 64:       1789         
+	Packet Len 64-128:     212          
+	Packet Len 128-256:    162          
+	Packet Len 256-1024:   375          
+	Packet Len 1024-1500:  536          
+	Packet Len > 1500:     0            
+	nDPI throughput:       371.21 K pps / 1.12 Gb/sec
+	Analysis begin:        31/Mar/2017 21:30:22
+	Analysis end:          31/Mar/2017 21:33:18
+	Traffic throughput:    17.44 pps / 55.12 Kb/sec
+	Traffic duration:      176.249 sec
+	Guessed flow protos:   14           
+	DPI Packets (TCP):     807           (6.67 pkts/flow)
+	DPI Packets (UDP):     64            (1.94 pkts/flow)
+	DPI Packets (other):   6             (1.00 pkts/flow)
+	Confidence: Match by port 14            (flows)
+	Confidence: DPI        146           (flows)
+
+
+Detected protocols:
+	DNS                  packets: 62            bytes: 6587          flows: 31           
+	HTTP                 packets: 9             bytes: 548           flows: 1            
+	DHCP                 packets: 3             bytes: 1056          flows: 2            
+	ICMP                 packets: 2             bytes: 188           flows: 1            
+	IGMP                 packets: 2             bytes: 92            flows: 1            
+	TLS                  packets: 117           bytes: 15241         flows: 11           
+	ICMPV6               packets: 12            bytes: 936           flows: 4            
+	ADS_Analytic_Track   packets: 19            bytes: 6096          flows: 1            
+	AmazonAlexa          packets: 1038          bytes: 318979        flows: 47           
+	Google               packets: 14            bytes: 1498          flows: 2            
+	HTTP_Proxy           packets: 27            bytes: 1930          flows: 5            
+	Amazon               packets: 1360          bytes: 665021        flows: 38           
+	PlayStore            packets: 19            bytes: 7852          flows: 1            
+	GoogleServices       packets: 17            bytes: 2587          flows: 1            
+	AmazonAWS            packets: 373           bytes: 141134        flows: 14           
+
+
+Protocol statistics:
+	Safe                 packets: 136           bytes: 23093         flows: 12           
+	Acceptable           packets: 2919          bytes: 1140556       flows: 147          
+	Tracker/Ads          packets: 19            bytes: 6096          flows: 1            
+
+Risk stats [found 68 (42.5 %) flows with risks]:
+	Known Proto on Non Std Port                  1 [ 1.2 %]
+	Obsolete TLS (v1.1 or older)                 4 [ 4.8 %]
+	Weak TLS Cipher                             51 [61.4 %]
+	TLS (probably) Not Carrying HTTPS            9 [10.8 %]
+	Missing SNI TLS Extn                         2 [ 2.4 %]
+	Susp Entropy                                 1 [ 1.2 %]
+	Error Code                                   2 [ 2.4 %]
+	Unidirectional Traffic                       5 [ 6.0 %]
+	TCP Connection Issues                        4 [ 4.8 %]
+	Probing Attempt                              4 [ 4.8 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

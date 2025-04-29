@@ -1,0 +1,86 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/starcraft_battle.pcap...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           11.71 MB     
+	Peak Memory:             11.71 MB     
+	Setup Time:              17 msec
+	Packet Processing Time:  1 msec
+
+Traffic statistics:
+	Ethernet bytes:        379300        (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            797           of 800 packets total
+	IP bytes:              360172        (avg pkt size 450 bytes)
+	Unique flows:          52           
+	TCP Packets:           744          
+	UDP Packets:           51           
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       1480         
+	Packet Len < 64:       513          
+	Packet Len 64-128:     26           
+	Packet Len 128-256:    26           
+	Packet Len 256-1024:   30           
+	Packet Len 1024-1500:  202          
+	Packet Len > 1500:     0            
+	nDPI throughput:       615.92 K pps / 2.18 Gb/sec
+	Analysis begin:        20/Jul/2015 16:29:13
+	Analysis end:          20/Jul/2015 16:29:45
+	Traffic throughput:    24.63 pps / 91.59 Kb/sec
+	Traffic duration:      32.353 sec
+	Guessed flow protos:   14           
+	DPI Packets (TCP):     180           (4.74 pkts/flow)
+	DPI Packets (UDP):     36            (2.77 pkts/flow)
+	DPI Packets (other):   1             (1.00 pkts/flow)
+	Confidence: Match by port 13            (flows)
+	Confidence: DPI        38            (flows)
+	Confidence: Match by IP 1             (flows)
+
+
+Detected protocols:
+	DNS                  packets: 26            bytes: 2848          flows: 7            
+	HTTP                 packets: 1             bytes: 66            flows: 1            
+	SSDP                 packets: 11            bytes: 4984          flows: 1            
+	WorldOfWarcraft      packets: 9             bytes: 880           flows: 1            
+	IGMP                 packets: 2             bytes: 120           flows: 1            
+	TLS                  packets: 46            bytes: 3071          flows: 14           
+	Google               packets: 11            bytes: 1420          flows: 2            
+	QUIC                 packets: 6             bytes: 475           flows: 1            
+	Blizzard             packets: 685           bytes: 346308        flows: 24           
+
+
+Protocol statistics:
+	Safe                 packets: 46            bytes: 3071          flows: 14           
+	Acceptable           packets: 57            bytes: 9913          flows: 13           
+	Fun                  packets: 694           bytes: 347188        flows: 25           
+
+Risk stats [found 8 (15.4 %) flows with risks]:
+	HTTP Susp User-Agent                         1 [ 7.7 %]
+	Susp Entropy                                 1 [ 7.7 %]
+	Error Code                                   1 [ 7.7 %]
+	Unidirectional Traffic                       3 [23.1 %]
+	HTTP Obsolete Server                         1 [ 7.7 %]
+	Minor Issues                                 1 [ 7.7 %]
+	TCP Connection Issues                        2 [15.4 %]
+	Binary File/Data Transfer (Attempt)          1 [ 7.7 %]
+	Probing Attempt                              2 [15.4 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

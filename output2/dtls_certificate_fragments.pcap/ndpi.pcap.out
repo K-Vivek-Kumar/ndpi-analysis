@@ -1,0 +1,68 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/dtls_certificate_fragments.pcap...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           11.07 MB     
+	Peak Memory:             11.07 MB     
+	Setup Time:              18 msec
+	Packet Processing Time:  0 msec
+
+Traffic statistics:
+	Ethernet bytes:        10817         (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            26            of 26 packets total
+	IP bytes:              10193         (avg pkt size 392 bytes)
+	Unique flows:          2            
+	TCP Packets:           0            
+	UDP Packets:           26           
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       1420         
+	Packet Len < 64:       1            
+	Packet Len 64-128:     0            
+	Packet Len 128-256:    14           
+	Packet Len 256-1024:   8            
+	Packet Len 1024-1500:  3            
+	Packet Len > 1500:     0            
+	nDPI throughput:       51.69 K pps / 164.07 Mb/sec
+	Analysis begin:        30/Apr/2019 12:07:55
+	Analysis end:          09/Jun/2020 05:47:11
+	Traffic throughput:    0.00 pps / 0 b/sec
+	Traffic duration:      35055556.000 sec
+	DPI Packets (UDP):     9             (4.50 pkts/flow)
+	Confidence: DPI        2             (flows)
+
+
+Detected protocols:
+	DTLS                 packets: 20            bytes: 5978          flows: 1            
+	Discord              packets: 6             bytes: 4215          flows: 1            
+
+
+Protocol statistics:
+	Safe                 packets: 20            bytes: 5978          flows: 1            
+	Fun                  packets: 6             bytes: 4215          flows: 1            
+
+Risk stats [found 2 (100.0 %) flows with risks]:
+	Weak TLS Cipher                              1 [16.7 %]
+	TLS (probably) Not Carrying HTTPS            2 [33.3 %]
+	Missing SNI TLS Extn                         2 [33.3 %]
+	TLS Cert About To Expire                     1 [16.7 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

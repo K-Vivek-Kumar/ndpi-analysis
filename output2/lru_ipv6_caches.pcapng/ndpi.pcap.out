@@ -1,0 +1,69 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/lru_ipv6_caches.pcapng...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           11.15 MB     
+	Peak Memory:             11.15 MB     
+	Setup Time:              18 msec
+	Packet Processing Time:  0 msec
+
+Traffic statistics:
+	Ethernet bytes:        22966         (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            88            of 88 packets total
+	IP bytes:              20854         (avg pkt size 236 bytes)
+	Unique flows:          12           
+	TCP Packets:           9            
+	UDP Packets:           79           
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       1380         
+	Packet Len < 64:       44           
+	Packet Len 64-128:     16           
+	Packet Len 128-256:    18           
+	Packet Len 256-1024:   4            
+	Packet Len 1024-1500:  6            
+	Packet Len > 1500:     0            
+	nDPI throughput:       136.22 K pps / 271.23 Mb/sec
+	Analysis begin:        09/Dec/2021 17:59:07
+	Analysis end:          09/Dec/2021 17:59:41
+	Traffic throughput:    2.61 pps / 5.32 Kb/sec
+	Traffic duration:      33.721 sec
+	DPI Packets (TCP):     9             (3.00 pkts/flow)
+	DPI Packets (UDP):     35            (3.89 pkts/flow)
+	Confidence: DPI (cache) 4             (flows)
+	Confidence: DPI        8             (flows)
+
+
+Detected protocols:
+	BitTorrent           packets: 25            bytes: 4546          flows: 5            
+	WhatsAppCall         packets: 24            bytes: 3996          flows: 3            
+	RTCP                 packets: 30            bytes: 3450          flows: 1            
+	Cloudflare           packets: 9             bytes: 8862          flows: 3            
+
+
+Protocol statistics:
+	Acceptable           packets: 88            bytes: 20854         flows: 12           
+
+Risk stats [found 11 (91.7 %) flows with risks]:
+	Known Proto on Non Std Port                  5 [31.2 %]
+	Unidirectional Traffic                      11 [68.8 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

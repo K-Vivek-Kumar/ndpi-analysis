@@ -1,0 +1,72 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/protonvpn.pcap...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           11.08 MB     
+	Peak Memory:             11.08 MB     
+	Setup Time:              19 msec
+	Packet Processing Time:  0 msec
+
+Traffic statistics:
+	Ethernet bytes:        11179         (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            41            of 41 packets total
+	IP bytes:              10195         (avg pkt size 248 bytes)
+	Unique flows:          3            
+	TCP Packets:           27           
+	UDP Packets:           14           
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       1480         
+	Packet Len < 64:       17           
+	Packet Len 64-128:     14           
+	Packet Len 128-256:    4            
+	Packet Len 256-1024:   2            
+	Packet Len 1024-1500:  4            
+	Packet Len > 1500:     0            
+	nDPI throughput:       101.23 K pps / 210.59 Mb/sec
+	Analysis begin:        01/Jan/1970 05:30:34
+	Analysis end:          26/Jul/2023 22:54:52
+	Traffic throughput:    0.00 pps / 0 b/sec
+	Traffic duration:      1690392320.000 sec
+	Guessed flow protos:   1            
+	DPI Packets (TCP):     12            (6.00 pkts/flow)
+	DPI Packets (UDP):     2             (2.00 pkts/flow)
+	Confidence: Match by port 1             (flows)
+	Confidence: DPI        2             (flows)
+
+
+Detected protocols:
+	TLS                  packets: 1             bytes: 74            flows: 1            
+	WireGuard            packets: 14            bytes: 2060          flows: 1            
+	ProtonVPN            packets: 26            bytes: 8061          flows: 1            
+
+
+Protocol statistics:
+	Safe                 packets: 1             bytes: 74            flows: 1            
+	Acceptable           packets: 40            bytes: 10121         flows: 2            
+
+Risk stats [found 3 (100.0 %) flows with risks]:
+	Known Proto on Non Std Port                  1 [25.0 %]
+	TLS Cert Expired                             1 [25.0 %]
+	Anonymous Subscriber                         1 [25.0 %]
+	Unidirectional Traffic                       1 [25.0 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

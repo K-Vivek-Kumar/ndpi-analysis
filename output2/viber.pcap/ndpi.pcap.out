@@ -1,0 +1,79 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/viber.pcap...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           11.43 MB     
+	Peak Memory:             11.43 MB     
+	Setup Time:              19 msec
+	Packet Processing Time:  1 msec
+
+Traffic statistics:
+	Ethernet bytes:        166381        (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            462           of 466 packets total
+	IP bytes:              155293        (avg pkt size 333 bytes)
+	Unique flows:          30           
+	TCP Packets:           327          
+	UDP Packets:           131          
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       1480         
+	Packet Len < 64:       232          
+	Packet Len 64-128:     60           
+	Packet Len 128-256:    34           
+	Packet Len 256-1024:   76           
+	Packet Len 1024-1500:  60           
+	Packet Len > 1500:     0            
+	nDPI throughput:       314.93 K pps / 865.29 Mb/sec
+	Analysis begin:        24/May/2018 15:23:58
+	Analysis end:          10/May/2024 14:31:28
+	Traffic throughput:    0.00 pps / 0 b/sec
+	Traffic duration:      188176064.000 sec
+	Guessed flow protos:   4            
+	DPI Packets (TCP):     94            (7.23 pkts/flow)
+	DPI Packets (UDP):     34            (2.27 pkts/flow)
+	DPI Packets (other):   2             (1.00 pkts/flow)
+	Confidence: Match by port 4             (flows)
+	Confidence: DPI        26            (flows)
+
+
+Detected protocols:
+	DNS                  packets: 16            bytes: 2239          flows: 8            
+	MDNS                 packets: 4             bytes: 412           flows: 1            
+	ICMP                 packets: 2             bytes: 3028          flows: 1            
+	TLS                  packets: 102           bytes: 33446         flows: 6            
+	ICMPV6               packets: 2             bytes: 140           flows: 1            
+	Google               packets: 27            bytes: 8775          flows: 1            
+	Viber                packets: 291           bytes: 104977        flows: 10           
+	QUIC                 packets: 3             bytes: 194           flows: 1            
+	ViberVoip            packets: 15            bytes: 2082          flows: 1            
+
+
+Protocol statistics:
+	Safe                 packets: 102           bytes: 33446         flows: 6            
+	Acceptable           packets: 69            bytes: 16870         flows: 14           
+	Fun                  packets: 291           bytes: 104977        flows: 10           
+
+Risk stats [found 4 (13.3 %) flows with risks]:
+	Known Proto on Non Std Port                  1 [25.0 %]
+	Susp Entropy                                 2 [50.0 %]
+	Unidirectional Traffic                       1 [25.0 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

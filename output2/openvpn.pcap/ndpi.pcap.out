@@ -1,0 +1,67 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/openvpn.pcap...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           11.24 MB     
+	Peak Memory:             11.24 MB     
+	Setup Time:              18 msec
+	Packet Processing Time:  0 msec
+
+Traffic statistics:
+	Ethernet bytes:        156090        (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            706           of 706 packets total
+	IP bytes:              139146        (avg pkt size 197 bytes)
+	Unique flows:          10           
+	TCP Packets:           336          
+	UDP Packets:           370          
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       1480         
+	Packet Len < 64:       278          
+	Packet Len 64-128:     175          
+	Packet Len 128-256:    168          
+	Packet Len 256-1024:   55           
+	Packet Len 1024-1500:  30           
+	Packet Len > 1500:     0            
+	nDPI throughput:       772.43 K pps / 1.27 Gb/sec
+	Analysis begin:        01/Jan/1970 05:31:02
+	Analysis end:          31/Jul/2024 17:14:55
+	Traffic throughput:    0.00 pps / 0 b/sec
+	Traffic duration:      1722426112.000 sec
+	DPI Packets (TCP):     24            (8.00 pkts/flow)
+	DPI Packets (UDP):     24            (3.43 pkts/flow)
+	Confidence: DPI        10            (flows)
+
+
+Detected protocols:
+	OpenVPN              packets: 691           bytes: 131184        flows: 9            
+	NordVPN              packets: 15            bytes: 7962          flows: 1            
+
+
+Protocol statistics:
+	Acceptable           packets: 706           bytes: 139146        flows: 10           
+
+Risk stats [found 8 (80.0 %) flows with risks]:
+	Known Proto on Non Std Port                  8 [72.7 %]
+	Susp Entropy                                 1 [ 9.1 %]
+	Unidirectional Traffic                       2 [18.2 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

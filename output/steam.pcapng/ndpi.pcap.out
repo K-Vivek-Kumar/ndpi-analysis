@@ -1,0 +1,67 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/steam.pcapng...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           11.11 MB     
+	Peak Memory:             11.11 MB     
+	Setup Time:              21 msec
+	Packet Processing Time:  0 msec
+
+Traffic statistics:
+	Ethernet bytes:        13878         (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            48            of 48 packets total
+	IP bytes:              12726         (avg pkt size 265 bytes)
+	Unique flows:          7            
+	TCP Packets:           40           
+	UDP Packets:           8            
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       1460         
+	Packet Len < 64:       29           
+	Packet Len 64-128:     2            
+	Packet Len 128-256:    5            
+	Packet Len 256-1024:   9            
+	Packet Len 1024-1500:  3            
+	Packet Len > 1500:     0            
+	nDPI throughput:       78.95 K pps / 174.15 Mb/sec
+	Analysis begin:        17/Jan/2024 03:31:55
+	Analysis end:          17/Jan/2024 03:31:56
+	Traffic throughput:    44.93 pps / 101.48 Kb/sec
+	Traffic duration:      1.068 sec
+	DPI Packets (TCP):     28            (5.60 pkts/flow)
+	DPI Packets (UDP):     2             (1.00 pkts/flow)
+	Confidence: DPI        7             (flows)
+
+
+Detected protocols:
+	Steam                packets: 36            bytes: 9897          flows: 5            
+	SteamDatagramRelay   packets: 2             bytes: 284           flows: 1            
+	Dota2                packets: 10            bytes: 2545          flows: 1            
+
+
+Protocol statistics:
+	Fun                  packets: 48            bytes: 12726         flows: 7            
+
+Risk stats [found 2 (28.6 %) flows with risks]:
+	Known Proto on Non Std Port                  1 [50.0 %]
+	Unidirectional Traffic                       1 [50.0 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

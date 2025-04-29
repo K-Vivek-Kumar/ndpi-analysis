@@ -1,0 +1,64 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/WebattackSQLinj.pcap...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           11.13 MB     
+	Peak Memory:             11.13 MB     
+	Setup Time:              18 msec
+	Packet Processing Time:  0 msec
+
+Traffic statistics:
+	Ethernet bytes:        32264         (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            94            of 94 packets total
+	IP bytes:              30008         (avg pkt size 319 bytes)
+	Unique flows:          9            
+	TCP Packets:           94           
+	UDP Packets:           0            
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       4181         
+	Packet Len < 64:       75           
+	Packet Len 64-128:     0            
+	Packet Len 128-256:    0            
+	Packet Len 256-1024:   11           
+	Packet Len 1024-1500:  1            
+	Packet Len > 1500:     7            
+	nDPI throughput:       170.29 K pps / 445.93 Mb/sec
+	Analysis begin:        06/Jul/2017 19:10:07
+	Analysis end:          06/Jul/2017 19:11:59
+	Traffic throughput:    0.84 pps / 2.26 Kb/sec
+	Traffic duration:      111.659 sec
+	DPI Packets (TCP):     54            (6.00 pkts/flow)
+	Confidence: DPI        9             (flows)
+
+
+Detected protocols:
+	HTTP                 packets: 94            bytes: 30008         flows: 9            
+
+
+Protocol statistics:
+	Acceptable           packets: 94            bytes: 30008         flows: 9            
+
+Risk stats [found 9 (100.0 %) flows with risks]:
+	HTTP/TLS/QUIC Numeric Hostname/SNI           9 [50.0 %]
+	HTTP Susp Header                             9 [50.0 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

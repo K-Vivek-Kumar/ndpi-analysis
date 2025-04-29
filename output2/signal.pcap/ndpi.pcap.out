@@ -1,0 +1,73 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/signal.pcap...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           11.53 MB     
+	Peak Memory:             11.53 MB     
+	Setup Time:              18 msec
+	Packet Processing Time:  1 msec
+
+Traffic statistics:
+	Ethernet bytes:        331056        (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            637           of 637 packets total
+	IP bytes:              315768        (avg pkt size 495 bytes)
+	Unique flows:          19           
+	TCP Packets:           628          
+	UDP Packets:           8            
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       1472         
+	Packet Len < 64:       292          
+	Packet Len 64-128:     104          
+	Packet Len 128-256:    23           
+	Packet Len 256-1024:   44           
+	Packet Len 1024-1500:  174          
+	Packet Len > 1500:     0            
+	nDPI throughput:       381.21 K pps / 1.48 Gb/sec
+	Analysis begin:        21/Sep/2019 13:04:05
+	Analysis end:          21/Sep/2019 13:04:27
+	Traffic throughput:    29.27 pps / 118.84 Kb/sec
+	Traffic duration:      21.763 sec
+	DPI Packets (TCP):     92            (6.13 pkts/flow)
+	DPI Packets (UDP):     5             (1.67 pkts/flow)
+	DPI Packets (other):   1             (1.00 pkts/flow)
+	Confidence: DPI        19            (flows)
+
+
+Detected protocols:
+	DNS                  packets: 4             bytes: 476           flows: 2            
+	DHCP                 packets: 4             bytes: 1368          flows: 1            
+	Signal               packets: 510           bytes: 282037        flows: 10           
+	ICMP                 packets: 1             bytes: 70            flows: 1            
+	TLS                  packets: 28            bytes: 2022          flows: 3            
+	AppleiTunes          packets: 90            bytes: 29795         flows: 2            
+
+
+Protocol statistics:
+	Safe                 packets: 28            bytes: 2022          flows: 3            
+	Acceptable           packets: 9             bytes: 1914          flows: 4            
+	Fun                  packets: 600           bytes: 311832        flows: 12           
+
+Risk stats [found 3 (15.8 %) flows with risks]:
+	TLS (probably) Not Carrying HTTPS            2 [66.7 %]
+	Unidirectional Traffic                       1 [33.3 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

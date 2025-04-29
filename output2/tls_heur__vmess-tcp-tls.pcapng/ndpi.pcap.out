@@ -1,0 +1,70 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/tls_heur__vmess-tcp-tls.pcapng...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           11.16 MB     
+	Peak Memory:             11.16 MB     
+	Setup Time:              17 msec
+	Packet Processing Time:  0 msec
+
+Traffic statistics:
+	Ethernet bytes:        49595         (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            100           of 100 packets total
+	IP bytes:              47195         (avg pkt size 471 bytes)
+	Unique flows:          10           
+	TCP Packets:           84           
+	UDP Packets:           16           
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       6632         
+	Packet Len < 64:       56           
+	Packet Len 64-128:     11           
+	Packet Len 128-256:    7            
+	Packet Len 256-1024:   9            
+	Packet Len 1024-1500:  10           
+	Packet Len > 1500:     7            
+	nDPI throughput:       146.41 K pps / 554.00 Mb/sec
+	Analysis begin:        01/Sep/2024 00:50:50
+	Analysis end:          01/Sep/2024 00:50:50
+	Traffic throughput:    585.37 pps / 2.21 Mb/sec
+	Traffic duration:      0.171 sec
+	DPI Packets (TCP):     18            (6.00 pkts/flow)
+	DPI Packets (UDP):     15            (2.14 pkts/flow)
+	Confidence: DPI        10            (flows)
+
+
+Detected protocols:
+	DNS                  packets: 16            bytes: 2006          flows: 7            
+	TLS                  packets: 30            bytes: 14152         flows: 1            
+	YouTube              packets: 26            bytes: 20991         flows: 1            
+	SOCKS                packets: 28            bytes: 10046         flows: 1            
+
+
+Protocol statistics:
+	Safe                 packets: 30            bytes: 14152         flows: 1            
+	Acceptable           packets: 44            bytes: 12052         flows: 8            
+	Fun                  packets: 26            bytes: 20991         flows: 1            
+
+Risk stats [found 3 (30.0 %) flows with risks]:
+	Known Proto on Non Std Port                  1 [33.3 %]
+	Minor Issues                                 2 [66.7 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

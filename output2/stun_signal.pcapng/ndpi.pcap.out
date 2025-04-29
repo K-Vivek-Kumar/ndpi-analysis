@@ -1,0 +1,68 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/stun_signal.pcapng...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           11.22 MB     
+	Peak Memory:             11.22 MB     
+	Setup Time:              20 msec
+	Packet Processing Time:  0 msec
+
+Traffic statistics:
+	Ethernet bytes:        59536         (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            460           of 460 packets total
+	IP bytes:              48496         (avg pkt size 105 bytes)
+	Unique flows:          23           
+	TCP Packets:           0            
+	UDP Packets:           407          
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       272          
+	Packet Len < 64:       229          
+	Packet Len 64-128:     190          
+	Packet Len 128-256:    22           
+	Packet Len 256-1024:   19           
+	Packet Len 1024-1500:  0            
+	Packet Len > 1500:     0            
+	nDPI throughput:       601.31 K pps / 593.76 Mb/sec
+	Analysis begin:        14/Nov/2021 20:28:56
+	Analysis end:          14/Nov/2021 20:30:21
+	Traffic throughput:    5.39 pps / 5.45 Kb/sec
+	Traffic duration:      85.344 sec
+	DPI Packets (UDP):     140           (6.67 pkts/flow)
+	DPI Packets (other):   2             (1.00 pkts/flow)
+	Confidence: DPI (cache) 20            (flows)
+	Confidence: DPI        3             (flows)
+
+
+Detected protocols:
+	ICMP                 packets: 53            bytes: 5186          flows: 2            
+	SignalVoip           packets: 407           bytes: 43310         flows: 21           
+
+
+Protocol statistics:
+	Acceptable           packets: 460           bytes: 48496         flows: 23           
+
+Risk stats [found 17 (73.9 %) flows with risks]:
+	Known Proto on Non Std Port                 15 [65.2 %]
+	Susp Entropy                                 2 [ 8.7 %]
+	Unidirectional Traffic                       6 [26.1 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

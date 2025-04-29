@@ -1,0 +1,86 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/fuzz-2006-06-26-2594.pcap...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           12.59 MB     
+	Peak Memory:             12.59 MB     
+	Setup Time:              17 msec
+	Packet Processing Time:  3 msec
+
+Traffic statistics:
+	Ethernet bytes:        96297         (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       9418         
+	IP packets:            556           of 691 packets total
+	IP bytes:              82953         (avg pkt size 120 bytes)
+	Unique flows:          246          
+	TCP Packets:           47           
+	UDP Packets:           503          
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    28           
+	Max Packet size:       1084         
+	Packet Len < 64:       418          
+	Packet Len 64-128:     51           
+	Packet Len 128-256:    18           
+	Packet Len 256-1024:   66           
+	Packet Len 1024-1500:  3            
+	Packet Len > 1500:     0            
+	nDPI throughput:       172.35 K pps / 227.74 Mb/sec
+	Analysis begin:        04/Jul/2005 15:02:20
+	Analysis end:          04/Jul/2005 15:28:27
+	Traffic throughput:    0.35 pps / 491 b/sec
+	Traffic duration:      1566.588 sec
+	Guessed flow protos:   33           
+	DPI Packets (TCP):     45            (2.14 pkts/flow)
+	DPI Packets (UDP):     358           (1.63 pkts/flow)
+	DPI Packets (other):   5             (1.00 pkts/flow)
+	Confidence: Unknown    33            (flows)
+	Confidence: Match by port 33            (flows)
+	Confidence: DPI        180           (flows)
+
+
+Detected protocols:
+	Unknown              packets: 33            bytes: 4066          flows: 33           
+	FTP_CONTROL          packets: 36            bytes: 2569          flows: 12           
+	DNS                  packets: 289           bytes: 25588         flows: 155          
+	NetBIOS              packets: 100           bytes: 9261          flows: 25           
+	SMBv1                packets: 6             bytes: 1377          flows: 3            
+	DHCP                 packets: 2             bytes: 932           flows: 1            
+	SMBv23               packets: 3             bytes: 186           flows: 1            
+	RTP                  packets: 5             bytes: 1070          flows: 1            
+	SIP                  packets: 82            bytes: 37904         flows: 15           
+
+
+Protocol statistics:
+	Acceptable           packets: 481           bytes: 74941         flows: 198          
+	Unsafe               packets: 36            bytes: 2569          flows: 12           
+	Dangerous            packets: 6             bytes: 1377          flows: 3            
+	Unrated              packets: 33            bytes: 4066          flows: 33           
+
+Risk stats [found 204 (82.9 %) flows with risks]:
+	Known Proto on Non Std Port                  1 [ 0.3 %]
+	Malformed Packet                            38 [13.1 %]
+	Unsafe Protocol                             13 [ 4.5 %]
+	Susp Entropy                                 6 [ 2.1 %]
+	Clear-Text Credentials                       1 [ 0.3 %]
+	Fragmented DNS Message                       1 [ 0.3 %]
+	Non-Printable/Invalid Chars Detected        35 [12.1 %]
+	Unidirectional Traffic                     195 [67.2 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

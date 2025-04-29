@@ -1,0 +1,85 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/KakaoTalk_talk.pcap...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           11.60 MB     
+	Peak Memory:             11.60 MB     
+	Setup Time:              18 msec
+	Packet Processing Time:  1 msec
+
+Traffic statistics:
+	Ethernet bytes:        512664        (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            3203          of 3203 packets total
+	IP bytes:              435792        (avg pkt size 136 bytes)
+	Unique flows:          20           
+	TCP Packets:           166          
+	UDP Packets:           3037         
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       884          
+	Packet Len < 64:       941          
+	Packet Len 64-128:     1465         
+	Packet Len 128-256:    767          
+	Packet Len 256-1024:   30           
+	Packet Len 1024-1500:  0            
+	Packet Len > 1500:     0            
+	nDPI throughput:       2.04 M pps / 2.44 Gb/sec
+	Analysis begin:        26/Apr/2015 22:55:40
+	Analysis end:          26/Apr/2015 22:56:56
+	Traffic throughput:    41.90 pps / 52.40 Kb/sec
+	Traffic duration:      76.438 sec
+	Guessed flow protos:   9            
+	DPI Packets (TCP):     67            (4.47 pkts/flow)
+	DPI Packets (UDP):     17            (3.40 pkts/flow)
+	Confidence: Match by port 8             (flows)
+	Confidence: DPI        11            (flows)
+	Confidence: Match by IP 1             (flows)
+
+
+Detected protocols:
+	DNS                  packets: 2             bytes: 197           flows: 1            
+	HTTP                 packets: 5             bytes: 280           flows: 1            
+	QQ                   packets: 15            bytes: 1727          flows: 1            
+	RTP                  packets: 2991          bytes: 398751        flows: 2            
+	TLS                  packets: 41            bytes: 5761          flows: 8            
+	HTTP_Proxy           packets: 16            bytes: 1838          flows: 2            
+	KakaoTalk            packets: 85            bytes: 20646         flows: 2            
+	KakaoTalk_Voice      packets: 44            bytes: 6196          flows: 2            
+	AmazonAWS            packets: 4             bytes: 396           flows: 1            
+
+
+Protocol statistics:
+	Safe                 packets: 41            bytes: 5761          flows: 8            
+	Acceptable           packets: 3147          bytes: 428304        flows: 11           
+	Fun                  packets: 15            bytes: 1727          flows: 1            
+
+Risk stats [found 12 (60.0 %) flows with risks]:
+	Known Proto on Non Std Port                  4 [15.4 %]
+	Self-signed Cert                             2 [ 7.7 %]
+	Obsolete TLS (v1.1 or older)                 3 [11.5 %]
+	Weak TLS Cipher                              2 [ 7.7 %]
+	Susp Entropy                                 1 [ 3.8 %]
+	Unidirectional Traffic                       7 [26.9 %]
+	TCP Connection Issues                        3 [11.5 %]
+	Binary File/Data Transfer (Attempt)          1 [ 3.8 %]
+	Probing Attempt                              3 [11.5 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

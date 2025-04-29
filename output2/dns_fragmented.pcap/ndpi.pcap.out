@@ -1,0 +1,66 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/dns_fragmented.pcap...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           11.18 MB     
+	Peak Memory:             11.18 MB     
+	Setup Time:              19 msec
+	Packet Processing Time:  0 msec
+
+Traffic statistics:
+	Ethernet bytes:        23111         (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       872          
+	IP packets:            59            of 66 packets total
+	IP bytes:              21695         (avg pkt size 328 bytes)
+	Unique flows:          21           
+	TCP Packets:           20           
+	UDP Packets:           39           
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    4            
+	Max Packet size:       1764         
+	Packet Len < 64:       27           
+	Packet Len 64-128:     17           
+	Packet Len 128-256:    4            
+	Packet Len 256-1024:   2            
+	Packet Len 1024-1500:  7            
+	Packet Len > 1500:     2            
+	nDPI throughput:       111.95 K pps / 334.58 Mb/sec
+	Analysis begin:        27/May/2019 20:10:08
+	Analysis end:          18/Jun/2019 20:28:36
+	Traffic throughput:    0.00 pps / 0 b/sec
+	Traffic duration:      1901908.500 sec
+	DPI Packets (TCP):     12            (6.00 pkts/flow)
+	DPI Packets (UDP):     39            (2.05 pkts/flow)
+	Confidence: DPI        21            (flows)
+
+
+Detected protocols:
+	DNS                  packets: 59            bytes: 21695         flows: 21           
+
+
+Protocol statistics:
+	Acceptable           packets: 59            bytes: 21695         flows: 21           
+
+Risk stats [found 8 (38.1 %) flows with risks]:
+	Large DNS Packet (512+ bytes)                7 [46.7 %]
+	Fragmented DNS Message                       7 [46.7 %]
+	Error Code                                   1 [ 6.7 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

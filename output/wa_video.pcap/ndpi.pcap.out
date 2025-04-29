@@ -1,0 +1,75 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/wa_video.pcap...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           11.46 MB     
+	Peak Memory:             11.46 MB     
+	Setup Time:              21 msec
+	Packet Processing Time:  0 msec
+
+Traffic statistics:
+	Ethernet bytes:        366561        (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            781           of 781 packets total
+	IP bytes:              347817        (avg pkt size 445 bytes)
+	Unique flows:          14           
+	TCP Packets:           133          
+	UDP Packets:           648          
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       1420         
+	Packet Len < 64:       208          
+	Packet Len 64-128:     82           
+	Packet Len 128-256:    159          
+	Packet Len 256-1024:   241          
+	Packet Len 1024-1500:  91           
+	Packet Len > 1500:     0            
+	nDPI throughput:       862.03 K pps / 3.01 Gb/sec
+	Analysis begin:        25/Jun/2019 15:12:44
+	Analysis end:          25/Jun/2019 15:13:15
+	Traffic throughput:    25.33 pps / 92.87 Kb/sec
+	Traffic duration:      30.835 sec
+	Guessed flow protos:   1            
+	DPI Packets (TCP):     22            (22.00 pkts/flow)
+	DPI Packets (UDP):     44            (3.38 pkts/flow)
+	Confidence: DPI (cache) 2             (flows)
+	Confidence: DPI        11            (flows)
+	Confidence: Match by IP 1             (flows)
+
+
+Detected protocols:
+	SSDP                 packets: 8             bytes: 1377          flows: 3            
+	DHCP                 packets: 2             bytes: 684           flows: 1            
+	WhatsAppCall         packets: 635           bytes: 324338        flows: 7            
+	Dropbox              packets: 2             bytes: 764           flows: 1            
+	WhatsApp             packets: 133           bytes: 20568         flows: 1            
+	Spotify              packets: 1             bytes: 86            flows: 1            
+
+
+Protocol statistics:
+	Acceptable           packets: 780           bytes: 347731        flows: 13           
+	Fun                  packets: 1             bytes: 86            flows: 1            
+
+Risk stats [found 3 (21.4 %) flows with risks]:
+	Known Proto on Non Std Port                  2 [50.0 %]
+	Susp Entropy                                 1 [25.0 %]
+	Unidirectional Traffic                       1 [25.0 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

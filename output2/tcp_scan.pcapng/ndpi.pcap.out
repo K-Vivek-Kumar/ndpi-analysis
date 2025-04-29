@@ -1,0 +1,73 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/tcp_scan.pcapng...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           11.08 MB     
+	Peak Memory:             11.08 MB     
+	Setup Time:              20 msec
+	Packet Processing Time:  0 msec
+
+Traffic statistics:
+	Ethernet bytes:        1574          (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            18            of 30 packets total
+	IP bytes:              1142          (avg pkt size 38 bytes)
+	Unique flows:          7            
+	TCP Packets:           18           
+	UDP Packets:           0            
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       44           
+	Packet Len < 64:       18           
+	Packet Len 64-128:     0            
+	Packet Len 128-256:    0            
+	Packet Len 256-1024:   0            
+	Packet Len 1024-1500:  0            
+	Packet Len > 1500:     0            
+	nDPI throughput:       42.15 K pps / 28.12 Mb/sec
+	Analysis begin:        24/Jan/2023 23:34:08
+	Analysis end:          24/Jan/2023 23:35:01
+	Traffic throughput:    0.34 pps / 234 b/sec
+	Traffic duration:      53.696 sec
+	Guessed flow protos:   4            
+	DPI Packets (TCP):     18            (2.57 pkts/flow)
+	Confidence: Unknown    3             (flows)
+	Confidence: Match by port 4             (flows)
+
+
+Detected protocols:
+	Unknown              packets: 6             bytes: 342           flows: 3            
+	HTTP                 packets: 4             bytes: 272           flows: 1            
+	SMBv23               packets: 2             bytes: 138           flows: 1            
+	RDP                  packets: 2             bytes: 118           flows: 1            
+	TLS                  packets: 4             bytes: 272           flows: 1            
+
+
+Protocol statistics:
+	Safe                 packets: 4             bytes: 272           flows: 1            
+	Acceptable           packets: 8             bytes: 528           flows: 3            
+	Unrated              packets: 6             bytes: 342           flows: 3            
+
+Risk stats [found 7 (100.0 %) flows with risks]:
+	Desktop/File Sharing                         1 [ 6.7 %]
+	TCP Connection Issues                        7 [46.7 %]
+	Probing Attempt                              7 [46.7 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

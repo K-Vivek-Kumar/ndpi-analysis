@@ -1,0 +1,76 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/false_positives.pcapng...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           11.11 MB     
+	Peak Memory:             11.11 MB     
+	Setup Time:              18 msec
+	Packet Processing Time:  0 msec
+
+Traffic statistics:
+	Ethernet bytes:        25313         (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            125           of 125 packets total
+	IP bytes:              22313         (avg pkt size 178 bytes)
+	Unique flows:          7            
+	TCP Packets:           5            
+	UDP Packets:           120          
+	VLAN Packets:          119          
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       1217         
+	Packet Len < 64:       9            
+	Packet Len 64-128:     53           
+	Packet Len 128-256:    60           
+	Packet Len 256-1024:   2            
+	Packet Len 1024-1500:  1            
+	Packet Len > 1500:     0            
+	nDPI throughput:       227.69 K pps / 351.77 Mb/sec
+	Analysis begin:        20/Oct/2022 02:06:35
+	Analysis end:          19/Oct/2024 01:23:41
+	Traffic throughput:    0.00 pps / 0 b/sec
+	Traffic duration:      63069428.000 sec
+	DPI Packets (TCP):     5             (5.00 pkts/flow)
+	DPI Packets (UDP):     20            (3.33 pkts/flow)
+	Confidence: Unknown    1             (flows)
+	Confidence: DPI        6             (flows)
+
+
+Detected protocols:
+	Unknown              packets: 6             bytes: 460           flows: 1            
+	RTP                  packets: 60            bytes: 13200         flows: 2            
+	RDP                  packets: 5             bytes: 1571          flows: 1            
+	GTP_U                packets: 54            bytes: 7082          flows: 3            
+
+
+Protocol statistics:
+	Acceptable           packets: 119           bytes: 21853         flows: 6            
+	Unrated              packets: 6             bytes: 460           flows: 1            
+
+Risk stats [found 3 (42.9 %) flows with risks]:
+	TLS (probably) Not Carrying HTTPS            1 [12.5 %]
+	Missing SNI TLS Extn                         1 [12.5 %]
+	Desktop/File Sharing                         1 [12.5 %]
+	TLS Susp Extn                                1 [12.5 %]
+	Susp Entropy                                 1 [12.5 %]
+	Non-Printable/Invalid Chars Detected         1 [12.5 %]
+	Possible Exploit Attempt                     1 [12.5 %]
+	Unidirectional Traffic                       1 [12.5 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

@@ -1,0 +1,68 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/portable_executable.pcap...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           11.08 MB     
+	Peak Memory:             11.08 MB     
+	Setup Time:              18 msec
+	Packet Processing Time:  0 msec
+
+Traffic statistics:
+	Ethernet bytes:        25034         (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            30            of 30 packets total
+	IP bytes:              24314         (avg pkt size 810 bytes)
+	Unique flows:          2            
+	TCP Packets:           30           
+	UDP Packets:           0            
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       1276         
+	Packet Len < 64:       12           
+	Packet Len 64-128:     0            
+	Packet Len 128-256:    0            
+	Packet Len 256-1024:   0            
+	Packet Len 1024-1500:  18           
+	Packet Len > 1500:     0            
+	nDPI throughput:       74.44 K pps / 473.93 Mb/sec
+	Analysis begin:        25/Aug/2020 11:03:39
+	Analysis end:          25/Aug/2020 11:04:51
+	Traffic throughput:    0.42 pps / 2.72 Kb/sec
+	Traffic duration:      71.872 sec
+	Guessed flow protos:   2            
+	DPI Packets (TCP):     30            (15.00 pkts/flow)
+	Confidence: Match by port 1             (flows)
+	Confidence: Match by IP 1             (flows)
+
+
+Detected protocols:
+	DNS                  packets: 15            bytes: 12154         flows: 1            
+	DigitalOcean         packets: 15            bytes: 12160         flows: 1            
+
+
+Protocol statistics:
+	Safe                 packets: 15            bytes: 12160         flows: 1            
+	Acceptable           packets: 15            bytes: 12154         flows: 1            
+
+Risk stats [found 2 (100.0 %) flows with risks]:
+	Binary App Transfer                          2 [50.0 %]
+	Susp Entropy                                 2 [50.0 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

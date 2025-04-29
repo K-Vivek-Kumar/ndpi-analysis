@@ -1,0 +1,72 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/http_ipv6.pcap...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           11.27 MB     
+	Peak Memory:             11.27 MB     
+	Setup Time:              18 msec
+	Packet Processing Time:  0 msec
+
+Traffic statistics:
+	Ethernet bytes:        70959         (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            193           of 193 packets total
+	IP bytes:              66327         (avg pkt size 343 bytes)
+	Unique flows:          15           
+	TCP Packets:           128          
+	UDP Packets:           65           
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       3579         
+	Packet Len < 64:       115          
+	Packet Len 64-128:     5            
+	Packet Len 128-256:    28           
+	Packet Len 256-1024:   25           
+	Packet Len 1024-1500:  17           
+	Packet Len > 1500:     3            
+	nDPI throughput:       227.06 K pps / 636.91 Mb/sec
+	Analysis begin:        23/Nov/2015 14:28:43
+	Analysis end:          23/Nov/2015 14:29:06
+	Traffic throughput:    8.39 pps / 24.09 Kb/sec
+	Traffic duration:      23.016 sec
+	Guessed flow protos:   7            
+	DPI Packets (TCP):     77            (5.92 pkts/flow)
+	DPI Packets (UDP):     4             (2.00 pkts/flow)
+	Confidence: Match by port 7             (flows)
+	Confidence: DPI        8             (flows)
+
+
+Detected protocols:
+	ntop                 packets: 80            bytes: 36401         flows: 4            
+	TLS                  packets: 26            bytes: 3245          flows: 7            
+	Facebook             packets: 22            bytes: 10202         flows: 2            
+	Google               packets: 62            bytes: 15977         flows: 1            
+	QUIC                 packets: 3             bytes: 502           flows: 1            
+
+
+Protocol statistics:
+	Safe                 packets: 106           bytes: 39646         flows: 11           
+	Acceptable           packets: 65            bytes: 16479         flows: 2            
+	Fun                  packets: 22            bytes: 10202         flows: 2            
+
+Risk stats [found 4 (26.7 %) flows with risks]:
+	TLS Cert Mismatch                            4 [100.0 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

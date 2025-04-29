@@ -1,0 +1,71 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/nordvpn.pcap...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           11.12 MB     
+	Peak Memory:             11.12 MB     
+	Setup Time:              19 msec
+	Packet Processing Time:  0 msec
+
+Traffic statistics:
+	Ethernet bytes:        49805         (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            143           of 143 packets total
+	IP bytes:              46373         (avg pkt size 324 bytes)
+	Unique flows:          4            
+	TCP Packets:           78           
+	UDP Packets:           65           
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       1480         
+	Packet Len < 64:       35           
+	Packet Len 64-128:     53           
+	Packet Len 128-256:    21           
+	Packet Len 256-1024:   17           
+	Packet Len 1024-1500:  17           
+	Packet Len > 1500:     0            
+	nDPI throughput:       199.72 K pps / 530.70 Mb/sec
+	Analysis begin:        01/Jan/1970 05:31:12
+	Analysis end:          01/Jan/1970 05:32:23
+	Traffic throughput:    2.04 pps / 5.55 Kb/sec
+	Traffic duration:      70.157 sec
+	Guessed flow protos:   2            
+	DPI Packets (TCP):     23            (11.50 pkts/flow)
+	DPI Packets (UDP):     11            (5.50 pkts/flow)
+	Confidence: Match by port 1             (flows)
+	Confidence: DPI        2             (flows)
+	Confidence: Match by IP 1             (flows)
+
+
+Detected protocols:
+	POPS                 packets: 53            bytes: 15226         flows: 1            
+	NordVPN              packets: 90            bytes: 31147         flows: 3            
+
+
+Protocol statistics:
+	Safe                 packets: 53            bytes: 15226         flows: 1            
+	Acceptable           packets: 90            bytes: 31147         flows: 3            
+
+Risk stats [found 3 (75.0 %) flows with risks]:
+	Known Proto on Non Std Port                  1 [25.0 %]
+	TLS (probably) Not Carrying HTTPS            1 [25.0 %]
+	Susp Entropy                                 2 [50.0 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

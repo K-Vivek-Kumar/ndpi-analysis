@@ -1,0 +1,76 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/ossfuzz_seed_fake_traces_1.pcapng...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           11.11 MB     
+	Peak Memory:             11.11 MB     
+	Setup Time:              20 msec
+	Packet Processing Time:  0 msec
+
+Traffic statistics:
+	Ethernet bytes:        3829          (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            21            of 21 packets total
+	IP bytes:              3325          (avg pkt size 158 bytes)
+	Unique flows:          10           
+	TCP Packets:           8            
+	UDP Packets:           13           
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       556          
+	Packet Len < 64:       13           
+	Packet Len 64-128:     4            
+	Packet Len 128-256:    0            
+	Packet Len 256-1024:   4            
+	Packet Len 1024-1500:  0            
+	Packet Len > 1500:     0            
+	nDPI throughput:       42.94 K pps / 59.74 Mb/sec
+	Analysis begin:        30/Jan/2023 21:56:56
+	Analysis end:          31/Jan/2023 21:39:33
+	Traffic throughput:    0.00 pps / 0 b/sec
+	Traffic duration:      85357.234 sec
+	Guessed flow protos:   4            
+	DPI Packets (TCP):     8             (1.33 pkts/flow)
+	DPI Packets (UDP):     9             (2.25 pkts/flow)
+	Confidence: Unknown    2             (flows)
+	Confidence: Match by port 4             (flows)
+	Confidence: DPI        4             (flows)
+
+
+Detected protocols:
+	Unknown              packets: 3             bytes: 209           flows: 2            
+	Gnutella             packets: 4             bytes: 333           flows: 2            
+	HalfLife2            packets: 2             bytes: 96            flows: 1            
+	Blizzard             packets: 4             bytes: 200           flows: 4            
+	Protobuf             packets: 8             bytes: 2487          flows: 1            
+
+
+Protocol statistics:
+	Safe                 packets: 8             bytes: 2487          flows: 1            
+	Fun                  packets: 6             bytes: 296           flows: 5            
+	Potentially Dangerous packets: 4             bytes: 333           flows: 2            
+	Unrated              packets: 3             bytes: 209           flows: 2            
+
+Risk stats [found 8 (80.0 %) flows with risks]:
+	Unsafe Protocol                              2 [12.5 %]
+	Unidirectional Traffic                       8 [50.0 %]
+	TCP Connection Issues                        6 [37.5 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

@@ -1,0 +1,78 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/ocs.pcap...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           11.24 MB     
+	Peak Memory:             11.24 MB     
+	Setup Time:              19 msec
+	Packet Processing Time:  0 msec
+
+Traffic statistics:
+	Ethernet bytes:        90089         (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            946           of 946 packets total
+	IP bytes:              67385         (avg pkt size 71 bytes)
+	Unique flows:          20           
+	TCP Packets:           938          
+	UDP Packets:           8            
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       1420         
+	Packet Len < 64:       914          
+	Packet Len 64-128:     5            
+	Packet Len 128-256:    14           
+	Packet Len 256-1024:   10           
+	Packet Len 1024-1500:  3            
+	Packet Len > 1500:     0            
+	nDPI throughput:       1.20 M pps / 872.24 Mb/sec
+	Analysis begin:        09/Dec/2015 14:49:44
+	Analysis end:          09/Dec/2015 14:50:46
+	Traffic throughput:    15.25 pps / 11.34 Kb/sec
+	Traffic duration:      62.039 sec
+	Guessed flow protos:   2            
+	DPI Packets (TCP):     117           (9.75 pkts/flow)
+	DPI Packets (UDP):     8             (1.00 pkts/flow)
+	Confidence: DPI        18            (flows)
+	Confidence: Match by IP 2             (flows)
+
+
+Detected protocols:
+	DNS                  packets: 8             bytes: 531           flows: 8            
+	HTTP                 packets: 13            bytes: 1019          flows: 2            
+	TLS                  packets: 25            bytes: 3056          flows: 2            
+	Google               packets: 2             bytes: 120           flows: 1            
+	OCS                  packets: 860           bytes: 57372         flows: 4            
+	GoogleServices       packets: 12            bytes: 2212          flows: 1            
+	Crashlytics          packets: 20            bytes: 2715          flows: 1            
+	Azure                packets: 6             bytes: 360           flows: 1            
+
+
+Protocol statistics:
+	Safe                 packets: 25            bytes: 3056          flows: 2            
+	Acceptable           packets: 61            bytes: 6957          flows: 14           
+	Fun                  packets: 860           bytes: 57372         flows: 4            
+
+Risk stats [found 20 (100.0 %) flows with risks]:
+	Obsolete TLS (v1.1 or older)                 4 [14.3 %]
+	HTTP Susp User-Agent                         3 [10.7 %]
+	TLS (probably) Not Carrying HTTPS            1 [ 3.6 %]
+	Unidirectional Traffic                      20 [71.4 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

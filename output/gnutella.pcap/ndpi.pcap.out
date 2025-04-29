@@ -1,0 +1,99 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/gnutella.pcap...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           16.10 MB     
+	Peak Memory:             16.10 MB     
+	Setup Time:              18 msec
+	Packet Processing Time:  10 msec
+
+Traffic statistics:
+	Ethernet bytes:        670658        (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            3882          of 3905 packets total
+	IP bytes:              577490        (avg pkt size 147 bytes)
+	Unique flows:          760          
+	TCP Packets:           2149         
+	UDP Packets:           1692         
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       1480         
+	Packet Len < 64:       2783         
+	Packet Len 64-128:     520          
+	Packet Len 128-256:    187          
+	Packet Len 256-1024:   308          
+	Packet Len 1024-1500:  84           
+	Packet Len > 1500:     0            
+	nDPI throughput:       382.20 K pps / 503.76 Mb/sec
+	Analysis begin:        01/Jan/1970 05:30:09
+	Analysis end:          01/Jan/1970 05:40:00
+	Traffic throughput:    6.57 pps / 8.87 Kb/sec
+	Traffic duration:      590.495 sec
+	Guessed flow protos:   1            
+	DPI Packets (TCP):     528           (3.85 pkts/flow)
+	DPI Packets (UDP):     866           (1.41 pkts/flow)
+	DPI Packets (other):   10            (1.00 pkts/flow)
+	Confidence: Unknown    389           (flows)
+	Confidence: Match by port 1             (flows)
+	Confidence: DPI        370           (flows)
+
+
+Detected protocols:
+	Unknown              packets: 883           bytes: 76902         flows: 389          
+	MDNS                 packets: 18            bytes: 1632          flows: 2            
+	NetBIOS              packets: 15            bytes: 1596          flows: 1            
+	SSDP                 packets: 46            bytes: 8904          flows: 8            
+	SMBv1                packets: 5             bytes: 1215          flows: 1            
+	DHCP                 packets: 2             bytes: 946           flows: 2            
+	Gnutella             packets: 2787          bytes: 437378        flows: 330          
+	ICMP                 packets: 8             bytes: 721           flows: 5            
+	IGMP                 packets: 12            bytes: 656           flows: 1            
+	TLS                  packets: 21            bytes: 4395          flows: 1            
+	ICMPV6               packets: 21            bytes: 1826          flows: 4            
+	DHCPV6               packets: 7             bytes: 1071          flows: 1            
+	WSD                  packets: 41            bytes: 39162         flows: 4            
+	LLMNR                packets: 10            bytes: 770           flows: 6            
+	NAT-PMP              packets: 4             bytes: 176           flows: 4            
+	BACnet               packets: 2             bytes: 140           flows: 1            
+
+
+Protocol statistics:
+	Safe                 packets: 23            bytes: 4535          flows: 2            
+	Acceptable           packets: 184           bytes: 57460         flows: 38           
+	Potentially Dangerous packets: 2787          bytes: 437378        flows: 330          
+	Dangerous            packets: 5             bytes: 1215          flows: 1            
+	Unrated              packets: 883           bytes: 76902         flows: 389          
+
+Risk stats [found 678 (89.2 %) flows with risks]:
+	Known Proto on Non Std Port                  4 [ 0.4 %]
+	Self-signed Cert                             1 [ 0.1 %]
+	TLS Cert Expired                             1 [ 0.1 %]
+	HTTP/TLS/QUIC Numeric Hostname/SNI           3 [ 0.3 %]
+	TLS (probably) Not Carrying HTTPS            1 [ 0.1 %]
+	Unsafe Protocol                            330 [35.5 %]
+	Missing SNI TLS Extn                         1 [ 0.1 %]
+	TLS Cert Validity Too Long                   1 [ 0.1 %]
+	Susp Entropy                                12 [ 1.3 %]
+	Unidirectional Traffic                     552 [59.4 %]
+	TCP Connection Issues                       11 [ 1.2 %]
+	Binary File/Data Transfer (Attempt)          2 [ 0.2 %]
+	Probing Attempt                             11 [ 1.2 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

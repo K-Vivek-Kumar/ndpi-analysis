@@ -1,0 +1,79 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/instagram.pcap...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           11.92 MB     
+	Peak Memory:             11.92 MB     
+	Setup Time:              17 msec
+	Packet Processing Time:  2 msec
+
+Traffic statistics:
+	Ethernet bytes:        606350        (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            846           of 847 packets total
+	IP bytes:              586046        (avg pkt size 691 bytes)
+	Unique flows:          38           
+	TCP Packets:           828          
+	UDP Packets:           13           
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       1450         
+	Packet Len < 64:       383          
+	Packet Len 64-128:     24           
+	Packet Len 128-256:    31           
+	Packet Len 256-1024:   56           
+	Packet Len 1024-1500:  352          
+	Packet Len > 1500:     0            
+	nDPI throughput:       358.17 K pps / 1.91 Gb/sec
+	Analysis begin:        12/Jul/2015 22:38:18
+	Analysis end:          18/Sep/2019 14:14:28
+	Traffic throughput:    0.00 pps / 0 b/sec
+	Traffic duration:      132075368.000 sec
+	Guessed flow protos:   7            
+	DPI Packets (TCP):     219           (7.30 pkts/flow)
+	DPI Packets (UDP):     10            (1.43 pkts/flow)
+	DPI Packets (other):   1             (1.00 pkts/flow)
+	Confidence: Unknown    1             (flows)
+	Confidence: Match by port 7             (flows)
+	Confidence: DPI        30            (flows)
+
+
+Detected protocols:
+	Unknown              packets: 1             bytes: 66            flows: 1            
+	DNS                  packets: 7             bytes: 1075          flows: 4            
+	HTTP                 packets: 156           bytes: 130772        flows: 7            
+	ICMP                 packets: 5             bytes: 510           flows: 1            
+	TLS                  packets: 103           bytes: 62597         flows: 5            
+	Dropbox              packets: 5             bytes: 725           flows: 2            
+	Instagram            packets: 569           bytes: 390301        flows: 18           
+
+
+Protocol statistics:
+	Safe                 packets: 103           bytes: 62597         flows: 5            
+	Acceptable           packets: 173           bytes: 133082        flows: 14           
+	Fun                  packets: 569           bytes: 390301        flows: 18           
+	Unrated              packets: 1             bytes: 66            flows: 1            
+
+Risk stats [found 11 (28.9 %) flows with risks]:
+	Obsolete TLS (v1.1 or older)                 5 [45.5 %]
+	Susp Entropy                                 1 [ 9.1 %]
+	Unidirectional Traffic                       5 [45.5 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

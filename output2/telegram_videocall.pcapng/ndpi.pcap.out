@@ -1,0 +1,81 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/telegram_videocall.pcapng...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           11.62 MB     
+	Peak Memory:             11.62 MB     
+	Setup Time:              18 msec
+	Packet Processing Time:  1 msec
+
+Traffic statistics:
+	Ethernet bytes:        404405        (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            887           of 889 packets total
+	IP bytes:              383117        (avg pkt size 430 bytes)
+	Unique flows:          34           
+	TCP Packets:           644          
+	UDP Packets:           232          
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       1260         
+	Packet Len < 64:       319          
+	Packet Len 64-128:     131          
+	Packet Len 128-256:    110          
+	Packet Len 256-1024:   126          
+	Packet Len 1024-1500:  201          
+	Packet Len > 1500:     0            
+	nDPI throughput:       647.45 K pps / 2.20 Gb/sec
+	Analysis begin:        23/Mar/2022 16:15:34
+	Analysis end:          23/Mar/2022 16:16:18
+	Traffic throughput:    20.10 pps / 71.60 Kb/sec
+	Traffic duration:      44.123 sec
+	Guessed flow protos:   2            
+	DPI Packets (TCP):     36            (3.60 pkts/flow)
+	DPI Packets (UDP):     91            (4.79 pkts/flow)
+	DPI Packets (other):   5             (1.00 pkts/flow)
+	Confidence: DPI (partial) 1             (flows)
+	Confidence: DPI (cache) 10            (flows)
+	Confidence: DPI        15            (flows)
+	Confidence: Match by IP 8             (flows)
+
+
+Detected protocols:
+	MDNS                 packets: 2             bytes: 194           flows: 2            
+	ICMP                 packets: 6             bytes: 828           flows: 3            
+	TLS                  packets: 4             bytes: 295           flows: 1            
+	ICMPV6               packets: 5             bytes: 350           flows: 2            
+	Dropbox              packets: 2             bytes: 348           flows: 1            
+	Telegram             packets: 636           bytes: 339253        flows: 8            
+	AmazonAWS            packets: 4             bytes: 288           flows: 1            
+	TelegramVoip         packets: 228           bytes: 41561         flows: 16           
+
+
+Protocol statistics:
+	Safe                 packets: 4             bytes: 295           flows: 1            
+	Acceptable           packets: 883           bytes: 382822        flows: 33           
+
+Risk stats [found 27 (79.4 %) flows with risks]:
+	Known Proto on Non Std Port                 16 [48.5 %]
+	Susp Entropy                                10 [30.3 %]
+	Unidirectional Traffic                       5 [15.2 %]
+	TCP Connection Issues                        1 [ 3.0 %]
+	Probing Attempt                              1 [ 3.0 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

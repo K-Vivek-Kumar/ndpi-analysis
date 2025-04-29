@@ -1,0 +1,88 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/zoom.pcap...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           11.74 MB     
+	Peak Memory:             11.74 MB     
+	Setup Time:              18 msec
+	Packet Processing Time:  1 msec
+
+Traffic statistics:
+	Ethernet bytes:        401158        (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            778           of 781 packets total
+	IP bytes:              382486        (avg pkt size 489 bytes)
+	Unique flows:          34           
+	TCP Packets:           457          
+	UDP Packets:           318          
+	VLAN Packets:          81           
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       1472         
+	Packet Len < 64:       264          
+	Packet Len 64-128:     135          
+	Packet Len 128-256:    54           
+	Packet Len 256-1024:   76           
+	Packet Len 1024-1500:  249          
+	Packet Len > 1500:     0            
+	nDPI throughput:       427.47 K pps / 1.64 Gb/sec
+	Analysis begin:        26/Sep/2019 23:24:26
+	Analysis end:          11/Jan/2023 19:20:56
+	Traffic throughput:    0.00 pps / 0 b/sec
+	Traffic duration:      103924592.000 sec
+	Guessed flow protos:   2            
+	DPI Packets (TCP):     110           (7.86 pkts/flow)
+	DPI Packets (UDP):     36            (2.00 pkts/flow)
+	DPI Packets (other):   2             (1.00 pkts/flow)
+	Confidence: Match by port 2             (flows)
+	Confidence: DPI        32            (flows)
+
+
+Detected protocols:
+	DNS                  packets: 12            bytes: 1043          flows: 6            
+	HTTP                 packets: 6             bytes: 952           flows: 1            
+	MDNS                 packets: 1             bytes: 87            flows: 1            
+	NetBIOS              packets: 3             bytes: 330           flows: 1            
+	SSDP                 packets: 1             bytes: 168           flows: 1            
+	DHCP                 packets: 1             bytes: 321           flows: 1            
+	ntop                 packets: 20            bytes: 4265          flows: 1            
+	IMAPS                packets: 2             bytes: 226           flows: 1            
+	ICMP                 packets: 3             bytes: 210           flows: 2            
+	TLS                  packets: 18            bytes: 6953          flows: 2            
+	Spotify              packets: 1             bytes: 86            flows: 1            
+	Zoom                 packets: 625           bytes: 353167        flows: 14           
+	GoogleServices       packets: 4             bytes: 1060          flows: 1            
+	GTP_U                packets: 81            bytes: 13618         flows: 1            
+
+
+Protocol statistics:
+	Safe                 packets: 40            bytes: 11444         flows: 4            
+	Acceptable           packets: 737           bytes: 370956        flows: 29           
+	Fun                  packets: 1             bytes: 86            flows: 1            
+
+Risk stats [found 13 (38.2 %) flows with risks]:
+	Known Proto on Non Std Port                  2 [12.5 %]
+	Obsolete TLS (v1.1 or older)                 1 [ 6.2 %]
+	TLS (probably) Not Carrying HTTPS            6 [37.5 %]
+	Error Code                                   1 [ 6.2 %]
+	Unidirectional Traffic                       4 [25.0 %]
+	TCP Connection Issues                        1 [ 6.2 %]
+	Probing Attempt                              1 [ 6.2 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

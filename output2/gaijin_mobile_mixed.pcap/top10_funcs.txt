@@ -1,0 +1,1556 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 8  of event 'cpu_atom/cycles/P'
+# Event count (approx.): 3227585
+#
+# Children      Self  Command     Shared Object      Symbol                         
+# ........  ........  ..........  .................  ...............................
+#
+    81.02%    81.02%  ndpiReader  libc.so.6          [.] _IO_file_xsgetn
+            |
+            ---_IO_file_xsgetn
+
+    18.98%     0.00%  ndpiReader  libc.so.6          [.] clone3
+            |
+            ---clone3
+               ret_from_fork_asm
+               ret_from_fork
+               |          
+               |--18.04%--syscall_exit_to_user_mode
+               |          switch_fpu_return
+               |          restore_fpregs_from_fpstate
+               |          
+                --0.94%--schedule_tail
+                          finish_task_switch.isra.0
+                          __perf_event_task_sched_in
+                          perf_pmu_nop_void
+
+    18.98%     0.00%  ndpiReader  [kernel.kallsyms]  [k] ret_from_fork_asm
+            |
+            ---ret_from_fork_asm
+               ret_from_fork
+               |          
+               |--18.04%--syscall_exit_to_user_mode
+               |          switch_fpu_return
+               |          restore_fpregs_from_fpstate
+               |          
+                --0.94%--schedule_tail
+                          finish_task_switch.isra.0
+                          __perf_event_task_sched_in
+                          perf_pmu_nop_void
+
+    18.98%     0.00%  ndpiReader  [kernel.kallsyms]  [k] ret_from_fork
+            |
+            ---ret_from_fork
+               |          
+               |--18.04%--syscall_exit_to_user_mode
+               |          switch_fpu_return
+               |          restore_fpregs_from_fpstate
+               |          
+                --0.94%--schedule_tail
+                          finish_task_switch.isra.0
+                          __perf_event_task_sched_in
+                          perf_pmu_nop_void
+
+    18.04%    18.04%  ndpiReader  [kernel.kallsyms]  [k] restore_fpregs_from_fpstate
+            |
+            ---clone3
+               ret_from_fork_asm
+               ret_from_fork
+               syscall_exit_to_user_mode
+               switch_fpu_return
+               restore_fpregs_from_fpstate
+
+    18.04%     0.00%  ndpiReader  [kernel.kallsyms]  [k] syscall_exit_to_user_mode
+            |
+            ---syscall_exit_to_user_mode
+               switch_fpu_return
+               restore_fpregs_from_fpstate
+
+    18.04%     0.00%  ndpiReader  [kernel.kallsyms]  [k] switch_fpu_return
+            |
+            ---switch_fpu_return
+               restore_fpregs_from_fpstate
+
+     0.94%     0.00%  ndpiReader  [kernel.kallsyms]  [k] perf_pmu_nop_void
+            |          
+             --0.94%--perf_pmu_nop_void
+
+     0.94%     0.00%  ndpiReader  [kernel.kallsyms]  [k] schedule_tail
+            |
+            ---schedule_tail
+               finish_task_switch.isra.0
+               __perf_event_task_sched_in
+               perf_pmu_nop_void
+
+     0.94%     0.00%  ndpiReader  [kernel.kallsyms]  [k] finish_task_switch.isra.0
+            |
+            ---finish_task_switch.isra.0
+               __perf_event_task_sched_in
+               perf_pmu_nop_void
+
+     0.94%     0.00%  ndpiReader  [kernel.kallsyms]  [k] __perf_event_task_sched_in
+            |
+            ---__perf_event_task_sched_in
+               perf_pmu_nop_void
+
+     0.94%     0.94%  ndpiReader  [kernel.kallsyms]  [k] native_sched_clock
+            |
+            ---clone3
+               ret_from_fork_asm
+               ret_from_fork
+               schedule_tail
+               finish_task_switch.isra.0
+               __perf_event_task_sched_in
+               perf_pmu_nop_void
+
+
+
+# Samples: 82  of event 'cpu_core/cycles/P'
+# Event count (approx.): 81571182
+#
+# Children      Self  Command     Shared Object         Symbol                            
+# ........  ........  ..........  ....................  ..................................
+#
+    17.38%    12.48%  ndpiReader  libc.so.6             [.] _int_malloc
+            |          
+            |--14.94%--_int_malloc
+            |          |          
+            |          |--4.94%--asm_exc_page_fault
+            |          |          |          
+            |          |           --3.71%--exc_page_fault
+            |          |                     do_user_addr_fault
+            |          |                     |          
+            |          |                     |--2.38%--handle_mm_fault
+            |          |                     |          __handle_mm_fault
+            |          |                     |          handle_pte_fault
+            |          |                     |          do_anonymous_page
+            |          |                     |          |          
+            |          |                     |          |--1.20%--alloc_anon_folio
+            |          |                     |          |          
+            |          |                     |           --1.19%--folio_add_new_anon_rmap
+            |          |                     |                     __lruvec_stat_mod_folio
+            |          |                     |          
+            |          |                      --1.33%--__rcu_read_unlock
+            |          |          
+            |           --1.19%--sync_regs
+            |          
+            |--1.25%--malloc
+            |          
+             --1.19%--__memset_avx2_unaligned_erms
+                       asm_exc_page_fault
+
+    16.62%    16.62%  ndpiReader  ndpiReader            [.] ac_automata_set_failure
+            |
+            ---ac_automata_set_failure
+
+    11.28%     0.00%  ndpiReader  [kernel.kallsyms]     [k] asm_exc_page_fault
+            |
+            ---asm_exc_page_fault
+               |          
+                --8.86%--exc_page_fault
+                          do_user_addr_fault
+                          |          
+                          |--7.53%--handle_mm_fault
+                          |          __handle_mm_fault
+                          |          handle_pte_fault
+                          |          do_anonymous_page
+                          |          |          
+                          |          |--2.67%--folio_add_lru_vma
+                          |          |          folio_add_lru
+                          |          |          folio_batch_move_lru
+                          |          |          lru_add_fn
+                          |          |          lru_gen_add_folio
+                          |          |          __mod_lruvec_state
+                          |          |          __mod_memcg_lruvec_state
+                          |          |          
+                          |          |--1.29%--__pte_offset_map_lock
+                          |          |          
+                          |          |--1.20%--alloc_anon_folio
+                          |          |          
+                          |          |--1.19%--folio_add_new_anon_rmap
+                          |          |          __lruvec_stat_mod_folio
+                          |          |          
+                          |           --1.19%--__mem_cgroup_charge
+                          |                     mem_cgroup_commit_charge
+                          |                     __count_memcg_events
+                          |          
+                           --1.33%--__rcu_read_unlock
+
+    10.05%     8.80%  ndpiReader  libc.so.6             [.] malloc
+            |          
+            |--8.68%--malloc
+            |          
+             --1.37%--ndpi_calloc
+
+     9.01%     0.00%  ndpiReader  [kernel.kallsyms]     [k] entry_SYSCALL_64_after_hwframe
+            |
+            ---entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               |          
+               |--6.92%--x64_sys_call
+               |          |          
+               |          |--3.14%--__x64_sys_mprotect
+               |          |          do_mprotect_pkey
+               |          |          mprotect_fixup
+               |          |          vma_modify
+               |          |          __split_vma
+               |          |          vma_complete
+               |          |          mas_store_prealloc
+               |          |          mas_wr_store_entry.isra.0
+               |          |          mas_wr_modify
+               |          |          mas_wr_bnode
+               |          |          mas_store_b_node
+               |          |          mas_mab_cp
+               |          |          
+               |          |--2.36%--__x64_sys_exit_group
+               |          |          do_group_exit
+               |          |          do_exit
+               |          |          exit_mm
+               |          |          mmput
+               |          |          __mmput
+               |          |          exit_mmap
+               |          |          |          
+               |          |          |--1.18%--tlb_finish_mmu
+               |          |          |          tlb_batch_pages_flush
+               |          |          |          free_pages_and_swap_cache
+               |          |          |          release_pages
+               |          |          |          
+               |          |           --1.18%--unmap_vmas
+               |          |                     unmap_single_vma
+               |          |                     unmap_page_range
+               |          |                     zap_pmd_range.isra.0
+               |          |                     zap_pte_range
+               |          |                     folio_remove_rmap_ptes
+               |          |                     __lruvec_stat_mod_folio
+               |          |          
+               |           --1.19%--__x64_sys_munmap
+               |                     __vm_munmap
+               |                     do_vmi_munmap
+               |                     do_vmi_align_munmap
+               |                     unmap_region
+               |                     tlb_finish_mmu
+               |                     tlb_batch_pages_flush
+               |                     free_pages_and_swap_cache
+               |                     release_pages
+               |                     free_unref_page_list
+               |          
+                --2.10%--syscall_exit_to_user_mode
+                          task_work_run
+                          ____fput
+                          __fput
+                          dput
+                          __dentry_kill
+                          dentry_free
+                          kmem_cache_free
+
+     9.01%     0.00%  ndpiReader  [kernel.kallsyms]     [k] do_syscall_64
+            |
+            ---do_syscall_64
+               |          
+               |--6.92%--x64_sys_call
+               |          |          
+               |          |--3.14%--__x64_sys_mprotect
+               |          |          do_mprotect_pkey
+               |          |          mprotect_fixup
+               |          |          vma_modify
+               |          |          __split_vma
+               |          |          vma_complete
+               |          |          mas_store_prealloc
+               |          |          mas_wr_store_entry.isra.0
+               |          |          mas_wr_modify
+               |          |          mas_wr_bnode
+               |          |          mas_store_b_node
+               |          |          mas_mab_cp
+               |          |          
+               |          |--2.36%--__x64_sys_exit_group
+               |          |          do_group_exit
+               |          |          do_exit
+               |          |          exit_mm
+               |          |          mmput
+               |          |          __mmput
+               |          |          exit_mmap
+               |          |          |          
+               |          |          |--1.18%--tlb_finish_mmu
+               |          |          |          tlb_batch_pages_flush
+               |          |          |          free_pages_and_swap_cache
+               |          |          |          release_pages
+               |          |          |          
+               |          |           --1.18%--unmap_vmas
+               |          |                     unmap_single_vma
+               |          |                     unmap_page_range
+               |          |                     zap_pmd_range.isra.0
+               |          |                     zap_pte_range
+               |          |                     folio_remove_rmap_ptes
+               |          |                     __lruvec_stat_mod_folio
+               |          |          
+               |           --1.19%--__x64_sys_munmap
+               |                     __vm_munmap
+               |                     do_vmi_munmap
+               |                     do_vmi_align_munmap
+               |                     unmap_region
+               |                     tlb_finish_mmu
+               |                     tlb_batch_pages_flush
+               |                     free_pages_and_swap_cache
+               |                     release_pages
+               |                     free_unref_page_list
+               |          
+                --2.10%--syscall_exit_to_user_mode
+                          task_work_run
+                          ____fput
+                          __fput
+                          dput
+                          __dentry_kill
+                          dentry_free
+                          kmem_cache_free
+
+     8.86%     0.00%  ndpiReader  [kernel.kallsyms]     [k] exc_page_fault
+            |
+            ---exc_page_fault
+               do_user_addr_fault
+               |          
+               |--7.53%--handle_mm_fault
+               |          __handle_mm_fault
+               |          handle_pte_fault
+               |          do_anonymous_page
+               |          |          
+               |          |--2.67%--folio_add_lru_vma
+               |          |          folio_add_lru
+               |          |          folio_batch_move_lru
+               |          |          lru_add_fn
+               |          |          lru_gen_add_folio
+               |          |          __mod_lruvec_state
+               |          |          __mod_memcg_lruvec_state
+               |          |          
+               |          |--1.29%--__pte_offset_map_lock
+               |          |          
+               |          |--1.20%--alloc_anon_folio
+               |          |          
+               |          |--1.19%--folio_add_new_anon_rmap
+               |          |          __lruvec_stat_mod_folio
+               |          |          
+               |           --1.19%--__mem_cgroup_charge
+               |                     mem_cgroup_commit_charge
+               |                     __count_memcg_events
+               |          
+                --1.33%--__rcu_read_unlock
+
+     8.86%     0.00%  ndpiReader  [kernel.kallsyms]     [k] do_user_addr_fault
+            |
+            ---do_user_addr_fault
+               |          
+               |--7.53%--handle_mm_fault
+               |          __handle_mm_fault
+               |          handle_pte_fault
+               |          do_anonymous_page
+               |          |          
+               |          |--2.67%--folio_add_lru_vma
+               |          |          folio_add_lru
+               |          |          folio_batch_move_lru
+               |          |          lru_add_fn
+               |          |          lru_gen_add_folio
+               |          |          __mod_lruvec_state
+               |          |          __mod_memcg_lruvec_state
+               |          |          
+               |          |--1.29%--__pte_offset_map_lock
+               |          |          
+               |          |--1.20%--alloc_anon_folio
+               |          |          
+               |          |--1.19%--folio_add_new_anon_rmap
+               |          |          __lruvec_stat_mod_folio
+               |          |          
+               |           --1.19%--__mem_cgroup_charge
+               |                     mem_cgroup_commit_charge
+               |                     __count_memcg_events
+               |          
+                --1.33%--__rcu_read_unlock
+
+     8.28%     0.00%  ndpiReader  libc.so.6             [.] __memset_avx2_unaligned_erms
+            |
+            ---__memset_avx2_unaligned_erms
+               |          
+               |--5.05%--asm_exc_page_fault
+               |          |          
+               |           --3.86%--exc_page_fault
+               |                     do_user_addr_fault
+               |                     handle_mm_fault
+               |                     __handle_mm_fault
+               |                     handle_pte_fault
+               |                     do_anonymous_page
+               |                     |          
+               |                     |--2.67%--folio_add_lru_vma
+               |                     |          folio_add_lru
+               |                     |          folio_batch_move_lru
+               |                     |          lru_add_fn
+               |                     |          lru_gen_add_folio
+               |                     |          __mod_lruvec_state
+               |                     |          __mod_memcg_lruvec_state
+               |                     |          
+               |                      --1.19%--__mem_cgroup_charge
+               |                                mem_cgroup_commit_charge
+               |                                __count_memcg_events
+               |          
+                --1.19%--sync_regs
+
+     8.28%     8.28%  ndpiReader  ndpiReader            [.] ndpi_patricia_lookup
+            |          
+            |--7.04%--ndpi_patricia_lookup
+            |          
+             --1.24%--ndpi_calloc
+
+     7.53%     0.00%  ndpiReader  [kernel.kallsyms]     [k] handle_mm_fault
+            |
+            ---handle_mm_fault
+               __handle_mm_fault
+               handle_pte_fault
+               do_anonymous_page
+               |          
+               |--2.67%--folio_add_lru_vma
+               |          folio_add_lru
+               |          folio_batch_move_lru
+               |          lru_add_fn
+               |          lru_gen_add_folio
+               |          __mod_lruvec_state
+               |          __mod_memcg_lruvec_state
+               |          
+               |--1.29%--__pte_offset_map_lock
+               |          
+               |--1.20%--alloc_anon_folio
+               |          
+               |--1.19%--folio_add_new_anon_rmap
+               |          __lruvec_stat_mod_folio
+               |          
+                --1.19%--__mem_cgroup_charge
+                          mem_cgroup_commit_charge
+                          __count_memcg_events
+
+     7.53%     0.00%  ndpiReader  [kernel.kallsyms]     [k] __handle_mm_fault
+            |
+            ---__handle_mm_fault
+               handle_pte_fault
+               do_anonymous_page
+               |          
+               |--2.67%--folio_add_lru_vma
+               |          folio_add_lru
+               |          folio_batch_move_lru
+               |          lru_add_fn
+               |          lru_gen_add_folio
+               |          __mod_lruvec_state
+               |          __mod_memcg_lruvec_state
+               |          
+               |--1.29%--__pte_offset_map_lock
+               |          
+               |--1.20%--alloc_anon_folio
+               |          
+               |--1.19%--folio_add_new_anon_rmap
+               |          __lruvec_stat_mod_folio
+               |          
+                --1.19%--__mem_cgroup_charge
+                          mem_cgroup_commit_charge
+                          __count_memcg_events
+
+     7.53%     0.00%  ndpiReader  [kernel.kallsyms]     [k] handle_pte_fault
+            |
+            ---handle_pte_fault
+               do_anonymous_page
+               |          
+               |--2.67%--folio_add_lru_vma
+               |          folio_add_lru
+               |          folio_batch_move_lru
+               |          lru_add_fn
+               |          lru_gen_add_folio
+               |          __mod_lruvec_state
+               |          __mod_memcg_lruvec_state
+               |          
+               |--1.29%--__pte_offset_map_lock
+               |          
+               |--1.20%--alloc_anon_folio
+               |          
+               |--1.19%--folio_add_new_anon_rmap
+               |          __lruvec_stat_mod_folio
+               |          
+                --1.19%--__mem_cgroup_charge
+                          mem_cgroup_commit_charge
+                          __count_memcg_events
+
+     7.53%     0.00%  ndpiReader  [kernel.kallsyms]     [k] do_anonymous_page
+            |
+            ---do_anonymous_page
+               |          
+               |--2.67%--folio_add_lru_vma
+               |          folio_add_lru
+               |          folio_batch_move_lru
+               |          lru_add_fn
+               |          lru_gen_add_folio
+               |          __mod_lruvec_state
+               |          __mod_memcg_lruvec_state
+               |          
+               |--1.29%--__pte_offset_map_lock
+               |          
+               |--1.20%--alloc_anon_folio
+               |          
+               |--1.19%--folio_add_new_anon_rmap
+               |          __lruvec_stat_mod_folio
+               |          
+                --1.19%--__mem_cgroup_charge
+                          mem_cgroup_commit_charge
+                          __count_memcg_events
+
+     7.01%     7.01%  ndpiReader  libc.so.6             [.] malloc_consolidate
+            |
+            ---malloc_consolidate
+
+     6.92%     0.00%  ndpiReader  [kernel.kallsyms]     [k] x64_sys_call
+            |
+            ---x64_sys_call
+               |          
+               |--3.14%--__x64_sys_mprotect
+               |          do_mprotect_pkey
+               |          mprotect_fixup
+               |          vma_modify
+               |          __split_vma
+               |          vma_complete
+               |          mas_store_prealloc
+               |          mas_wr_store_entry.isra.0
+               |          mas_wr_modify
+               |          mas_wr_bnode
+               |          mas_store_b_node
+               |          mas_mab_cp
+               |          
+               |--2.36%--__x64_sys_exit_group
+               |          do_group_exit
+               |          do_exit
+               |          exit_mm
+               |          mmput
+               |          __mmput
+               |          exit_mmap
+               |          |          
+               |          |--1.18%--tlb_finish_mmu
+               |          |          tlb_batch_pages_flush
+               |          |          free_pages_and_swap_cache
+               |          |          release_pages
+               |          |          
+               |           --1.18%--unmap_vmas
+               |                     unmap_single_vma
+               |                     unmap_page_range
+               |                     zap_pmd_range.isra.0
+               |                     zap_pte_range
+               |                     folio_remove_rmap_ptes
+               |                     __lruvec_stat_mod_folio
+               |          
+                --1.19%--__x64_sys_munmap
+                          __vm_munmap
+                          do_vmi_munmap
+                          do_vmi_align_munmap
+                          unmap_region
+                          tlb_finish_mmu
+                          tlb_batch_pages_flush
+                          free_pages_and_swap_cache
+                          release_pages
+                          free_unref_page_list
+
+     6.31%     3.69%  ndpiReader  ndpiReader            [.] ndpi_calloc
+            |          
+            |--5.12%--ndpi_calloc
+            |          
+             --1.19%--0
+                       ndpi_calloc
+
+     6.01%     0.00%  ndpiReader  [unknown]             [.] 0000000000000000
+            |
+            ---0
+               |          
+               |--2.50%--node_find_next
+               |          
+               |--1.19%--ndpi_calloc
+               |          
+               |--1.19%--node_release
+               |          
+                --1.14%--ndpi_Clear_Patricia
+
+     4.47%     4.47%  ndpiReader  libc.so.6             [.] _int_free
+            |          
+            |--3.29%--0x51
+            |          _int_free
+            |          
+             --1.18%--0x31
+                       _int_free
+
+     3.29%     0.00%  ndpiReader  [unknown]             [.] 0x0000000000000051
+            |
+            ---0x51
+               _int_free
+
+     3.20%     3.20%  ndpiReader  libc.so.6             [.] cfree@GLIBC_2.2.5
+            |          
+            |--1.10%--0x60688061af50
+            |          ndpi_Clear_Patricia
+            |          
+            |--1.06%--cfree@GLIBC_2.2.5
+            |          
+             --1.04%--0x6068801ba3f0
+                       cfree@GLIBC_2.2.5
+
+     3.14%     3.14%  ndpiReader  [kernel.kallsyms]     [k] mas_mab_cp
+            |
+            ---0x40
+               _dl_sysdep_start
+               dl_main
+               mprotect
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_mprotect
+               do_mprotect_pkey
+               mprotect_fixup
+               vma_modify
+               __split_vma
+               vma_complete
+               mas_store_prealloc
+               mas_wr_store_entry.isra.0
+               mas_wr_modify
+               mas_wr_bnode
+               mas_store_b_node
+               mas_mab_cp
+
+     3.14%     0.00%  ndpiReader  [unknown]             [k] 0x0000000000000040
+            |
+            ---0x40
+               _dl_sysdep_start
+               dl_main
+               mprotect
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_mprotect
+               do_mprotect_pkey
+               mprotect_fixup
+               vma_modify
+               __split_vma
+               vma_complete
+               mas_store_prealloc
+               mas_wr_store_entry.isra.0
+               mas_wr_modify
+               mas_wr_bnode
+               mas_store_b_node
+               mas_mab_cp
+
+     3.14%     0.00%  ndpiReader  ld-linux-x86-64.so.2  [.] _dl_sysdep_start
+            |
+            ---_dl_sysdep_start
+               dl_main
+               mprotect
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_mprotect
+               do_mprotect_pkey
+               mprotect_fixup
+               vma_modify
+               __split_vma
+               vma_complete
+               mas_store_prealloc
+               mas_wr_store_entry.isra.0
+               mas_wr_modify
+               mas_wr_bnode
+               mas_store_b_node
+               mas_mab_cp
+
+     3.14%     0.00%  ndpiReader  ld-linux-x86-64.so.2  [.] dl_main
+            |
+            ---dl_main
+               mprotect
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_mprotect
+               do_mprotect_pkey
+               mprotect_fixup
+               vma_modify
+               __split_vma
+               vma_complete
+               mas_store_prealloc
+               mas_wr_store_entry.isra.0
+               mas_wr_modify
+               mas_wr_bnode
+               mas_store_b_node
+               mas_mab_cp
+
+     3.14%     0.00%  ndpiReader  ld-linux-x86-64.so.2  [.] mprotect
+            |
+            ---mprotect
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_mprotect
+               do_mprotect_pkey
+               mprotect_fixup
+               vma_modify
+               __split_vma
+               vma_complete
+               mas_store_prealloc
+               mas_wr_store_entry.isra.0
+               mas_wr_modify
+               mas_wr_bnode
+               mas_store_b_node
+               mas_mab_cp
+
+     3.14%     0.00%  ndpiReader  [kernel.kallsyms]     [k] __x64_sys_mprotect
+            |
+            ---__x64_sys_mprotect
+               do_mprotect_pkey
+               mprotect_fixup
+               vma_modify
+               __split_vma
+               vma_complete
+               mas_store_prealloc
+               mas_wr_store_entry.isra.0
+               mas_wr_modify
+               mas_wr_bnode
+               mas_store_b_node
+               mas_mab_cp
+
+     3.14%     0.00%  ndpiReader  [kernel.kallsyms]     [k] do_mprotect_pkey
+            |
+            ---do_mprotect_pkey
+               mprotect_fixup
+               vma_modify
+               __split_vma
+               vma_complete
+               mas_store_prealloc
+               mas_wr_store_entry.isra.0
+               mas_wr_modify
+               mas_wr_bnode
+               mas_store_b_node
+               mas_mab_cp
+
+     3.14%     0.00%  ndpiReader  [kernel.kallsyms]     [k] mprotect_fixup
+            |
+            ---mprotect_fixup
+               vma_modify
+               __split_vma
+               vma_complete
+               mas_store_prealloc
+               mas_wr_store_entry.isra.0
+               mas_wr_modify
+               mas_wr_bnode
+               mas_store_b_node
+               mas_mab_cp
+
+     3.14%     0.00%  ndpiReader  [kernel.kallsyms]     [k] vma_modify
+            |
+            ---vma_modify
+               __split_vma
+               vma_complete
+               mas_store_prealloc
+               mas_wr_store_entry.isra.0
+               mas_wr_modify
+               mas_wr_bnode
+               mas_store_b_node
+               mas_mab_cp
+
+     3.14%     0.00%  ndpiReader  [kernel.kallsyms]     [k] __split_vma
+            |
+            ---__split_vma
+               vma_complete
+               mas_store_prealloc
+               mas_wr_store_entry.isra.0
+               mas_wr_modify
+               mas_wr_bnode
+               mas_store_b_node
+               mas_mab_cp
+
+     3.14%     0.00%  ndpiReader  [kernel.kallsyms]     [k] vma_complete
+            |
+            ---vma_complete
+               mas_store_prealloc
+               mas_wr_store_entry.isra.0
+               mas_wr_modify
+               mas_wr_bnode
+               mas_store_b_node
+               mas_mab_cp
+
+     3.14%     0.00%  ndpiReader  [kernel.kallsyms]     [k] mas_store_prealloc
+            |
+            ---mas_store_prealloc
+               mas_wr_store_entry.isra.0
+               mas_wr_modify
+               mas_wr_bnode
+               mas_store_b_node
+               mas_mab_cp
+
+     3.14%     0.00%  ndpiReader  [kernel.kallsyms]     [k] mas_wr_store_entry.isra.0
+            |
+            ---mas_wr_store_entry.isra.0
+               mas_wr_modify
+               mas_wr_bnode
+               mas_store_b_node
+               mas_mab_cp
+
+     3.14%     0.00%  ndpiReader  [kernel.kallsyms]     [k] mas_wr_modify
+            |
+            ---mas_wr_modify
+               mas_wr_bnode
+               mas_store_b_node
+               mas_mab_cp
+
+     3.14%     0.00%  ndpiReader  [kernel.kallsyms]     [k] mas_wr_bnode
+            |
+            ---mas_wr_bnode
+               mas_store_b_node
+               mas_mab_cp
+
+     3.14%     0.00%  ndpiReader  [kernel.kallsyms]     [k] mas_store_b_node
+            |
+            ---mas_store_b_node
+               mas_mab_cp
+
+     2.67%     2.67%  ndpiReader  [kernel.kallsyms]     [k] __mod_memcg_lruvec_state
+            |
+            ---0x2d2d2d2d2d2d2d2d
+               0x775bb3c16a00
+               __memset_avx2_unaligned_erms
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+               handle_pte_fault
+               do_anonymous_page
+               folio_add_lru_vma
+               folio_add_lru
+               folio_batch_move_lru
+               lru_add_fn
+               lru_gen_add_folio
+               __mod_lruvec_state
+               __mod_memcg_lruvec_state
+
+     2.67%     0.00%  ndpiReader  [unknown]             [k] 0x2d2d2d2d2d2d2d2d
+            |
+            ---0x2d2d2d2d2d2d2d2d
+               0x775bb3c16a00
+               __memset_avx2_unaligned_erms
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+               handle_pte_fault
+               do_anonymous_page
+               folio_add_lru_vma
+               folio_add_lru
+               folio_batch_move_lru
+               lru_add_fn
+               lru_gen_add_folio
+               __mod_lruvec_state
+               __mod_memcg_lruvec_state
+
+     2.67%     0.00%  ndpiReader  [unknown]             [k] 0x0000775bb3c16a00
+            |
+            ---0x775bb3c16a00
+               __memset_avx2_unaligned_erms
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+               handle_pte_fault
+               do_anonymous_page
+               folio_add_lru_vma
+               folio_add_lru
+               folio_batch_move_lru
+               lru_add_fn
+               lru_gen_add_folio
+               __mod_lruvec_state
+               __mod_memcg_lruvec_state
+
+     2.67%     0.00%  ndpiReader  [kernel.kallsyms]     [k] folio_add_lru_vma
+            |
+            ---folio_add_lru_vma
+               folio_add_lru
+               folio_batch_move_lru
+               lru_add_fn
+               lru_gen_add_folio
+               __mod_lruvec_state
+               __mod_memcg_lruvec_state
+
+     2.67%     0.00%  ndpiReader  [kernel.kallsyms]     [k] folio_add_lru
+            |
+            ---folio_add_lru
+               folio_batch_move_lru
+               lru_add_fn
+               lru_gen_add_folio
+               __mod_lruvec_state
+               __mod_memcg_lruvec_state
+
+     2.67%     0.00%  ndpiReader  [kernel.kallsyms]     [k] folio_batch_move_lru
+            |
+            ---folio_batch_move_lru
+               lru_add_fn
+               lru_gen_add_folio
+               __mod_lruvec_state
+               __mod_memcg_lruvec_state
+
+     2.67%     0.00%  ndpiReader  [kernel.kallsyms]     [k] lru_add_fn
+            |
+            ---lru_add_fn
+               lru_gen_add_folio
+               __mod_lruvec_state
+               __mod_memcg_lruvec_state
+
+     2.67%     0.00%  ndpiReader  [kernel.kallsyms]     [k] lru_gen_add_folio
+            |
+            ---lru_gen_add_folio
+               __mod_lruvec_state
+               __mod_memcg_lruvec_state
+
+     2.67%     0.00%  ndpiReader  [kernel.kallsyms]     [k] __mod_lruvec_state
+            |
+            ---__mod_lruvec_state
+               __mod_memcg_lruvec_state
+
+     2.50%     2.50%  ndpiReader  ndpiReader            [.] node_find_next
+            |
+            ---0
+               node_find_next
+
+     2.38%     2.38%  ndpiReader  [kernel.kallsyms]     [k] sync_regs
+            |          
+            |--1.19%--__memset_avx2_unaligned_erms
+            |          sync_regs
+            |          
+             --1.19%--_int_malloc
+                       sync_regs
+
+     2.37%     2.37%  ndpiReader  ndpiReader            [.] ac_finalize_node
+            |          
+            |--1.19%--ac_finalize_node
+            |          
+             --1.19%--0x6d0000
+                       ac_finalize_node
+
+     2.37%     1.18%  ndpiReader  [kernel.kallsyms]     [k] release_pages
+            |          
+            |--1.19%--release_pages
+            |          free_unref_page_list
+            |          
+             --1.18%--entry_SYSCALL_64_after_hwframe
+                       do_syscall_64
+                       x64_sys_call
+                       __x64_sys_exit_group
+                       do_group_exit
+                       do_exit
+                       exit_mm
+                       mmput
+                       __mmput
+                       exit_mmap
+                       tlb_finish_mmu
+                       tlb_batch_pages_flush
+                       free_pages_and_swap_cache
+                       release_pages
+
+     2.37%     0.00%  ndpiReader  [kernel.kallsyms]     [k] tlb_finish_mmu
+            |
+            ---tlb_finish_mmu
+               tlb_batch_pages_flush
+               free_pages_and_swap_cache
+               release_pages
+               |          
+                --1.19%--free_unref_page_list
+
+     2.37%     0.00%  ndpiReader  [kernel.kallsyms]     [k] tlb_batch_pages_flush
+            |
+            ---tlb_batch_pages_flush
+               free_pages_and_swap_cache
+               release_pages
+               |          
+                --1.19%--free_unref_page_list
+
+     2.37%     0.00%  ndpiReader  [kernel.kallsyms]     [k] free_pages_and_swap_cache
+            |
+            ---free_pages_and_swap_cache
+               release_pages
+               |          
+                --1.19%--free_unref_page_list
+
+     2.37%     2.37%  ndpiReader  [kernel.kallsyms]     [k] __lruvec_stat_mod_folio
+            |          
+            |--1.19%--_int_malloc
+            |          asm_exc_page_fault
+            |          exc_page_fault
+            |          do_user_addr_fault
+            |          handle_mm_fault
+            |          __handle_mm_fault
+            |          handle_pte_fault
+            |          do_anonymous_page
+            |          folio_add_new_anon_rmap
+            |          __lruvec_stat_mod_folio
+            |          
+             --1.18%--entry_SYSCALL_64_after_hwframe
+                       do_syscall_64
+                       x64_sys_call
+                       __x64_sys_exit_group
+                       do_group_exit
+                       do_exit
+                       exit_mm
+                       mmput
+                       __mmput
+                       exit_mmap
+                       unmap_vmas
+                       unmap_single_vma
+                       unmap_page_range
+                       zap_pmd_range.isra.0
+                       zap_pte_range
+                       folio_remove_rmap_ptes
+                       __lruvec_stat_mod_folio
+
+     2.36%     0.00%  ndpiReader  [kernel.kallsyms]     [k] __x64_sys_exit_group
+            |
+            ---__x64_sys_exit_group
+               do_group_exit
+               do_exit
+               exit_mm
+               mmput
+               __mmput
+               exit_mmap
+               |          
+               |--1.18%--tlb_finish_mmu
+               |          tlb_batch_pages_flush
+               |          free_pages_and_swap_cache
+               |          release_pages
+               |          
+                --1.18%--unmap_vmas
+                          unmap_single_vma
+                          unmap_page_range
+                          zap_pmd_range.isra.0
+                          zap_pte_range
+                          folio_remove_rmap_ptes
+                          __lruvec_stat_mod_folio
+
+     2.36%     0.00%  ndpiReader  [kernel.kallsyms]     [k] do_group_exit
+            |
+            ---do_group_exit
+               do_exit
+               exit_mm
+               mmput
+               __mmput
+               exit_mmap
+               |          
+               |--1.18%--tlb_finish_mmu
+               |          tlb_batch_pages_flush
+               |          free_pages_and_swap_cache
+               |          release_pages
+               |          
+                --1.18%--unmap_vmas
+                          unmap_single_vma
+                          unmap_page_range
+                          zap_pmd_range.isra.0
+                          zap_pte_range
+                          folio_remove_rmap_ptes
+                          __lruvec_stat_mod_folio
+
+     2.36%     0.00%  ndpiReader  [kernel.kallsyms]     [k] do_exit
+            |
+            ---do_exit
+               exit_mm
+               mmput
+               __mmput
+               exit_mmap
+               |          
+               |--1.18%--tlb_finish_mmu
+               |          tlb_batch_pages_flush
+               |          free_pages_and_swap_cache
+               |          release_pages
+               |          
+                --1.18%--unmap_vmas
+                          unmap_single_vma
+                          unmap_page_range
+                          zap_pmd_range.isra.0
+                          zap_pte_range
+                          folio_remove_rmap_ptes
+                          __lruvec_stat_mod_folio
+
+     2.36%     0.00%  ndpiReader  [kernel.kallsyms]     [k] exit_mm
+            |
+            ---exit_mm
+               mmput
+               __mmput
+               exit_mmap
+               |          
+               |--1.18%--tlb_finish_mmu
+               |          tlb_batch_pages_flush
+               |          free_pages_and_swap_cache
+               |          release_pages
+               |          
+                --1.18%--unmap_vmas
+                          unmap_single_vma
+                          unmap_page_range
+                          zap_pmd_range.isra.0
+                          zap_pte_range
+                          folio_remove_rmap_ptes
+                          __lruvec_stat_mod_folio
+
+     2.36%     0.00%  ndpiReader  [kernel.kallsyms]     [k] mmput
+            |
+            ---mmput
+               __mmput
+               exit_mmap
+               |          
+               |--1.18%--tlb_finish_mmu
+               |          tlb_batch_pages_flush
+               |          free_pages_and_swap_cache
+               |          release_pages
+               |          
+                --1.18%--unmap_vmas
+                          unmap_single_vma
+                          unmap_page_range
+                          zap_pmd_range.isra.0
+                          zap_pte_range
+                          folio_remove_rmap_ptes
+                          __lruvec_stat_mod_folio
+
+     2.36%     0.00%  ndpiReader  [kernel.kallsyms]     [k] __mmput
+            |
+            ---__mmput
+               exit_mmap
+               |          
+               |--1.18%--tlb_finish_mmu
+               |          tlb_batch_pages_flush
+               |          free_pages_and_swap_cache
+               |          release_pages
+               |          
+                --1.18%--unmap_vmas
+                          unmap_single_vma
+                          unmap_page_range
+                          zap_pmd_range.isra.0
+                          zap_pte_range
+                          folio_remove_rmap_ptes
+                          __lruvec_stat_mod_folio
+
+     2.36%     0.00%  ndpiReader  [kernel.kallsyms]     [k] exit_mmap
+            |
+            ---exit_mmap
+               |          
+               |--1.18%--tlb_finish_mmu
+               |          tlb_batch_pages_flush
+               |          free_pages_and_swap_cache
+               |          release_pages
+               |          
+                --1.18%--unmap_vmas
+                          unmap_single_vma
+                          unmap_page_range
+                          zap_pmd_range.isra.0
+                          zap_pte_range
+                          folio_remove_rmap_ptes
+                          __lruvec_stat_mod_folio
+
+     2.34%     1.19%  ndpiReader  ndpiReader            [.] ac_automata_walk
+            |          
+            |--1.19%--0x700000
+            |          ac_automata_walk
+            |          
+             --1.15%--ac_automata_walk
+
+     2.24%     1.14%  ndpiReader  ndpiReader            [.] ndpi_Clear_Patricia
+            |          
+            |--1.14%--0
+            |          ndpi_Clear_Patricia
+            |          
+             --1.10%--ndpi_Clear_Patricia
+
+     2.10%     2.10%  ndpiReader  [kernel.kallsyms]     [k] kmem_cache_free
+            |
+            ---_start
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               syscall_exit_to_user_mode
+               task_work_run
+               ____fput
+               __fput
+               dput
+               __dentry_kill
+               dentry_free
+               kmem_cache_free
+
+     2.10%     0.00%  ndpiReader  ld-linux-x86-64.so.2  [.] _start
+            |
+            ---_start
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               syscall_exit_to_user_mode
+               task_work_run
+               ____fput
+               __fput
+               dput
+               __dentry_kill
+               dentry_free
+               kmem_cache_free
+
+     2.10%     0.00%  ndpiReader  [kernel.kallsyms]     [k] syscall_exit_to_user_mode
+            |
+            ---syscall_exit_to_user_mode
+               task_work_run
+               ____fput
+               __fput
+               dput
+               __dentry_kill
+               dentry_free
+               kmem_cache_free
+
+     2.10%     0.00%  ndpiReader  [kernel.kallsyms]     [k] task_work_run
+            |
+            ---task_work_run
+               ____fput
+               __fput
+               dput
+               __dentry_kill
+               dentry_free
+               kmem_cache_free
+
+     2.10%     0.00%  ndpiReader  [kernel.kallsyms]     [k] ____fput
+            |
+            ---____fput
+               __fput
+               dput
+               __dentry_kill
+               dentry_free
+               kmem_cache_free
+
+     2.10%     0.00%  ndpiReader  [kernel.kallsyms]     [k] __fput
+            |
+            ---__fput
+               dput
+               __dentry_kill
+               dentry_free
+               kmem_cache_free
+
+     2.10%     0.00%  ndpiReader  [kernel.kallsyms]     [k] dput
+            |
+            ---dput
+               __dentry_kill
+               dentry_free
+               kmem_cache_free
+
+     2.10%     0.00%  ndpiReader  [kernel.kallsyms]     [k] __dentry_kill
+            |
+            ---__dentry_kill
+               dentry_free
+               kmem_cache_free
+
+     2.10%     0.00%  ndpiReader  [kernel.kallsyms]     [k] dentry_free
+            |
+            ---dentry_free
+               kmem_cache_free
+
+     2.04%     2.04%  ndpiReader  ndpiReader            [.] memset@plt
+            |
+            ---__memset_avx2_unaligned_erms
+
+     1.33%     1.33%  ndpiReader  [kernel.kallsyms]     [k] lock_vma_under_rcu
+            |
+            ---_int_malloc
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               __rcu_read_unlock
+
+     1.33%     0.00%  ndpiReader  [kernel.kallsyms]     [k] __rcu_read_unlock
+            |
+            ---__rcu_read_unlock
+
+     1.29%     1.29%  ndpiReader  [kernel.kallsyms]     [k] __pte_offset_map_lock
+            |
+            ---sysmalloc
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+               handle_pte_fault
+               do_anonymous_page
+               __pte_offset_map_lock
+
+     1.29%     0.00%  ndpiReader  libc.so.6             [.] sysmalloc
+            |
+            ---sysmalloc
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+               handle_pte_fault
+               do_anonymous_page
+               __pte_offset_map_lock
+
+     1.22%     1.22%  ndpiReader  ndpiReader            [.] ndpi_fill_prefix_v6
+            |
+            ---ndpi_fill_prefix_v6
+
+     1.21%     1.21%  ndpiReader  libc.so.6             [.] __GI___inet_pton
+            |
+            ---0x653a376636323a32
+               __GI___inet_pton
+
+     1.21%     0.00%  ndpiReader  [unknown]             [.] 0x653a376636323a32
+            |
+            ---0x653a376636323a32
+               __GI___inet_pton
+
+     1.20%     1.20%  ndpiReader  [kernel.kallsyms]     [k] alloc_anon_folio
+            |
+            ---_int_malloc
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+               handle_pte_fault
+               do_anonymous_page
+               alloc_anon_folio
+
+     1.19%     0.00%  ndpiReader  [kernel.kallsyms]     [k] folio_add_new_anon_rmap
+            |
+            ---folio_add_new_anon_rmap
+               __lruvec_stat_mod_folio
+
+     1.19%     1.19%  ndpiReader  [kernel.kallsyms]     [k] free_unref_page_list
+            |
+            ---__munmap
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_munmap
+               __vm_munmap
+               do_vmi_munmap
+               do_vmi_align_munmap
+               unmap_region
+               tlb_finish_mmu
+               tlb_batch_pages_flush
+               free_pages_and_swap_cache
+               release_pages
+               free_unref_page_list
+
+     1.19%     0.00%  ndpiReader  libc.so.6             [.] __munmap
+            |
+            ---__munmap
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_munmap
+               __vm_munmap
+               do_vmi_munmap
+               do_vmi_align_munmap
+               unmap_region
+               tlb_finish_mmu
+               tlb_batch_pages_flush
+               free_pages_and_swap_cache
+               release_pages
+               free_unref_page_list
+
+     1.19%     0.00%  ndpiReader  [kernel.kallsyms]     [k] __x64_sys_munmap
+            |
+            ---__x64_sys_munmap
+               __vm_munmap
+               do_vmi_munmap
+               do_vmi_align_munmap
+               unmap_region
+               tlb_finish_mmu
+               tlb_batch_pages_flush
+               free_pages_and_swap_cache
+               release_pages
+               free_unref_page_list
+
+     1.19%     0.00%  ndpiReader  [kernel.kallsyms]     [k] __vm_munmap
+            |
+            ---__vm_munmap
+               do_vmi_munmap
+               do_vmi_align_munmap
+               unmap_region
+               tlb_finish_mmu
+               tlb_batch_pages_flush
+               free_pages_and_swap_cache
+               release_pages
+               free_unref_page_list
+
+     1.19%     0.00%  ndpiReader  [kernel.kallsyms]     [k] do_vmi_munmap
+            |
+            ---do_vmi_munmap
+               do_vmi_align_munmap
+               unmap_region
+               tlb_finish_mmu
+               tlb_batch_pages_flush
+               free_pages_and_swap_cache
+               release_pages
+               free_unref_page_list
+
+     1.19%     0.00%  ndpiReader  [kernel.kallsyms]     [k] do_vmi_align_munmap
+            |
+            ---do_vmi_align_munmap
+               unmap_region
+               tlb_finish_mmu
+               tlb_batch_pages_flush
+               free_pages_and_swap_cache
+               release_pages
+               free_unref_page_list
+
+     1.19%     0.00%  ndpiReader  [kernel.kallsyms]     [k] unmap_region
+            |
+            ---unmap_region
+               tlb_finish_mmu
+               tlb_batch_pages_flush
+               free_pages_and_swap_cache
+               release_pages
+               free_unref_page_list
+
+     1.19%     0.00%  ndpiReader  [unknown]             [.] 0x00000000006d0000
+            |
+            ---0x6d0000
+               ac_finalize_node
+
+     1.19%     1.19%  ndpiReader  ndpiReader            [.] node_release
+            |
+            ---0
+               node_release
+
+     1.19%     1.19%  ndpiReader  [kernel.kallsyms]     [k] __count_memcg_events
+            |
+            ---__memset_avx2_unaligned_erms
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+               handle_pte_fault
+               do_anonymous_page
+               __mem_cgroup_charge
+               mem_cgroup_commit_charge
+               __count_memcg_events
+
+     1.19%     0.00%  ndpiReader  [kernel.kallsyms]     [k] __mem_cgroup_charge
+            |
+            ---__mem_cgroup_charge
+               mem_cgroup_commit_charge
+               __count_memcg_events
+
+     1.19%     0.00%  ndpiReader  [kernel.kallsyms]     [k] mem_cgroup_commit_charge
+            |
+            ---mem_cgroup_commit_charge
+               __count_memcg_events
+
+     1.19%     0.00%  ndpiReader  [unknown]             [.] 0x0000000000700000
+            |
+            ---0x700000
+               ac_automata_walk
+
+     1.18%     0.00%  ndpiReader  [kernel.kallsyms]     [k] unmap_vmas
+            |
+            ---unmap_vmas
+               unmap_single_vma
+               unmap_page_range
+               zap_pmd_range.isra.0
+               zap_pte_range
+               folio_remove_rmap_ptes
+               __lruvec_stat_mod_folio
+
+     1.18%     0.00%  ndpiReader  [kernel.kallsyms]     [k] unmap_single_vma
+            |
+            ---unmap_single_vma
+               unmap_page_range
+               zap_pmd_range.isra.0
+               zap_pte_range
+               folio_remove_rmap_ptes
+               __lruvec_stat_mod_folio
+
+     1.18%     0.00%  ndpiReader  [kernel.kallsyms]     [k] unmap_page_range
+            |
+            ---unmap_page_range
+               zap_pmd_range.isra.0
+               zap_pte_range
+               folio_remove_rmap_ptes
+               __lruvec_stat_mod_folio
+
+     1.18%     0.00%  ndpiReader  [kernel.kallsyms]     [k] zap_pmd_range.isra.0
+            |
+            ---zap_pmd_range.isra.0
+               zap_pte_range
+               folio_remove_rmap_ptes
+               __lruvec_stat_mod_folio
+
+     1.18%     0.00%  ndpiReader  [kernel.kallsyms]     [k] zap_pte_range
+            |
+            ---zap_pte_range
+               folio_remove_rmap_ptes
+               __lruvec_stat_mod_folio
+
+     1.18%     0.00%  ndpiReader  [kernel.kallsyms]     [k] folio_remove_rmap_ptes
+            |
+            ---folio_remove_rmap_ptes
+               __lruvec_stat_mod_folio
+
+     1.18%     0.00%  ndpiReader  [unknown]             [.] 0x0000000000000031
+            |
+            ---0x31
+               _int_free
+
+     1.17%     1.17%  ndpiReader  libc.so.6             [.] unlink_chunk.constprop.0
+            |
+            ---unlink_chunk.constprop.0
+
+     1.15%     1.15%  ndpiReader  ndpiReader            [.] ac_automata_release_node
+            |
+            ---0x610000
+               ac_automata_walk
+
+     1.15%     0.00%  ndpiReader  [unknown]             [.] 0x0000000000610000
+            |
+            ---0x610000
+               ac_automata_walk
+
+     1.10%     0.00%  ndpiReader  [unknown]             [.] 0x000060688061af50
+            |
+            ---0x60688061af50
+               ndpi_Clear_Patricia
+
+     1.04%     0.00%  ndpiReader  [unknown]             [.] 0x00006068801ba3f0
+            |
+            ---0x6068801ba3f0
+               cfree@GLIBC_2.2.5
+
+     0.23%     0.23%  ndpiReader  [kernel.kallsyms]     [k] security_bprm_committing_creds
+     0.23%     0.00%  ndpiReader  [unknown]             [k] 0x0000722c762eb08b
+     0.23%     0.00%  ndpiReader  [kernel.kallsyms]     [k] __x64_sys_execve
+     0.23%     0.00%  ndpiReader  [kernel.kallsyms]     [k] do_execveat_common.isra.0
+     0.23%     0.00%  ndpiReader  [kernel.kallsyms]     [k] bprm_execve
+     0.23%     0.00%  ndpiReader  [kernel.kallsyms]     [k] bprm_execve.part.0
+     0.23%     0.00%  ndpiReader  [kernel.kallsyms]     [k] exec_binprm
+     0.23%     0.00%  ndpiReader  [kernel.kallsyms]     [k] search_binary_handler
+     0.23%     0.00%  ndpiReader  [kernel.kallsyms]     [k] load_elf_binary
+     0.23%     0.00%  ndpiReader  [kernel.kallsyms]     [k] begin_new_exec
+     0.02%     0.00%  perf-exec   [kernel.kallsyms]     [k] perf_ctx_enable
+     0.02%     0.00%  perf-exec   [unknown]             [k] 0x0000722c762eb08b
+     0.02%     0.00%  perf-exec   [kernel.kallsyms]     [k] entry_SYSCALL_64_after_hwframe
+     0.02%     0.00%  perf-exec   [kernel.kallsyms]     [k] do_syscall_64
+     0.02%     0.00%  perf-exec   [kernel.kallsyms]     [k] x64_sys_call
+     0.02%     0.00%  perf-exec   [kernel.kallsyms]     [k] __x64_sys_execve
+     0.02%     0.00%  perf-exec   [kernel.kallsyms]     [k] do_execveat_common.isra.0
+     0.02%     0.00%  perf-exec   [kernel.kallsyms]     [k] bprm_execve
+     0.02%     0.00%  perf-exec   [kernel.kallsyms]     [k] bprm_execve.part.0
+     0.02%     0.00%  perf-exec   [kernel.kallsyms]     [k] exec_binprm
+     0.02%     0.00%  perf-exec   [kernel.kallsyms]     [k] search_binary_handler
+     0.02%     0.00%  perf-exec   [kernel.kallsyms]     [k] load_elf_binary
+     0.02%     0.00%  perf-exec   [kernel.kallsyms]     [k] begin_new_exec
+     0.02%     0.00%  perf-exec   [kernel.kallsyms]     [k] perf_event_exec
+     0.02%     0.00%  perf-exec   [kernel.kallsyms]     [k] perf_event_enable_on_exec
+     0.02%     0.00%  perf-exec   [kernel.kallsyms]     [k] ctx_resched
+     0.01%     0.01%  perf-exec   [kernel.kallsyms]     [k] acpi_os_read_memory
+     0.00%     0.00%  perf-exec   [kernel.kallsyms]     [k] perf_event_nmi_handler
+     0.00%     0.00%  perf-exec   [kernel.kallsyms]     [k] perf_sample_event_took
+     0.00%     0.00%  perf-exec   [kernel.kallsyms]     [k] intel_pmu_handle_irq
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

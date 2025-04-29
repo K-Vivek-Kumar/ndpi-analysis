@@ -1,0 +1,73 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/yandex.pcapng...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           11.22 MB     
+	Peak Memory:             11.22 MB     
+	Setup Time:              18 msec
+	Packet Processing Time:  0 msec
+
+Traffic statistics:
+	Ethernet bytes:        60703         (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            130           of 130 packets total
+	IP bytes:              57583         (avg pkt size 442 bytes)
+	Unique flows:          9            
+	TCP Packets:           130          
+	UDP Packets:           0            
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       4128         
+	Packet Len < 64:       70           
+	Packet Len 64-128:     16           
+	Packet Len 128-256:    3            
+	Packet Len 256-1024:   21           
+	Packet Len 1024-1500:  12           
+	Packet Len > 1500:     8            
+	nDPI throughput:       161.29 K pps / 574.60 Mb/sec
+	Analysis begin:        06/Feb/2023 02:12:37
+	Analysis end:          06/Feb/2023 03:07:51
+	Traffic throughput:    0.04 pps / 146 b/sec
+	Traffic duration:      3313.814 sec
+	DPI Packets (TCP):     78            (8.67 pkts/flow)
+	Confidence: DPI        9             (flows)
+
+
+Detected protocols:
+	Yandex               packets: 20            bytes: 3709          flows: 2            
+	YandexMail           packets: 11            bytes: 3137          flows: 1            
+	YandexMusic          packets: 18            bytes: 8243          flows: 1            
+	YandexMarket         packets: 11            bytes: 3888          flows: 1            
+	YandexDisk           packets: 18            bytes: 9337          flows: 1            
+	YandexCloud          packets: 18            bytes: 11310         flows: 1            
+	YandexMetrika        packets: 16            bytes: 9241          flows: 1            
+	YandexDirect         packets: 18            bytes: 8718          flows: 1            
+
+
+Protocol statistics:
+	Safe                 packets: 94            bytes: 40622         flows: 7            
+	Fun                  packets: 18            bytes: 8243          flows: 1            
+	Tracker/Ads          packets: 18            bytes: 8718          flows: 1            
+
+Risk stats [found 5 (55.6 %) flows with risks]:
+	TLS Cert About To Expire                     1 [20.0 %]
+	Unidirectional Traffic                       4 [80.0 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

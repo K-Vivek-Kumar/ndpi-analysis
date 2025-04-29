@@ -1,0 +1,93 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/anyconnect-vpn.pcap...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           11.64 MB     
+	Peak Memory:             11.64 MB     
+	Setup Time:              21 msec
+	Packet Processing Time:  1 msec
+
+Traffic statistics:
+	Ethernet bytes:        144653        (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            585           of 589 packets total
+	IP bytes:              130613        (avg pkt size 221 bytes)
+	Unique flows:          69           
+	TCP Packets:           422          
+	UDP Packets:           135          
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       1480         
+	Packet Len < 64:       290          
+	Packet Len 64-128:     101          
+	Packet Len 128-256:    99           
+	Packet Len 256-1024:   58           
+	Packet Len 1024-1500:  37           
+	Packet Len > 1500:     0            
+	nDPI throughput:       333.90 K pps / 629.92 Mb/sec
+	Analysis begin:        28/Sep/2019 21:44:00
+	Analysis end:          28/Sep/2019 21:44:48
+	Traffic throughput:    12.21 pps / 23.58 Kb/sec
+	Traffic duration:      47.930 sec
+	Guessed flow protos:   6            
+	DPI Packets (TCP):     131           (5.95 pkts/flow)
+	DPI Packets (UDP):     81            (2.19 pkts/flow)
+	DPI Packets (other):   10            (1.00 pkts/flow)
+	Confidence: Unknown    2             (flows)
+	Confidence: Match by port 6             (flows)
+	Confidence: DPI        61            (flows)
+
+
+Detected protocols:
+	Unknown              packets: 19            bytes: 1054          flows: 2            
+	DNS                  packets: 42            bytes: 5072          flows: 21           
+	HTTP                 packets: 50            bytes: 11137         flows: 5            
+	MDNS                 packets: 24            bytes: 4279          flows: 4            
+	NetBIOS              packets: 15            bytes: 1542          flows: 1            
+	SSDP                 packets: 15            bytes: 5625          flows: 9            
+	DTLS                 packets: 29            bytes: 6109          flows: 1            
+	ICMP                 packets: 2             bytes: 126           flows: 2            
+	IGMP                 packets: 8             bytes: 378           flows: 6            
+	TLS                  packets: 328           bytes: 86914         flows: 13           
+	ICMPV6               packets: 18            bytes: 2964          flows: 2            
+	Slack                packets: 27            bytes: 4825          flows: 1            
+	AJP                  packets: 5             bytes: 390           flows: 1            
+	CiscoVPN             packets: 3             bytes: 198           flows: 1            
+
+
+Protocol statistics:
+	Safe                 packets: 357           bytes: 93023         flows: 14           
+	Acceptable           packets: 209           bytes: 36536         flows: 53           
+	Unrated              packets: 19            bytes: 1054          flows: 2            
+
+Risk stats [found 28 (40.6 %) flows with risks]:
+	Known Proto on Non Std Port                  5 [12.5 %]
+	Self-signed Cert                             1 [ 2.5 %]
+	Obsolete TLS (v1.1 or older)                 1 [ 2.5 %]
+	Weak TLS Cipher                              3 [ 7.5 %]
+	HTTP/TLS/QUIC Numeric Hostname/SNI           2 [ 5.0 %]
+	TLS (probably) Not Carrying HTTPS            2 [ 5.0 %]
+	Missing SNI TLS Extn                         4 [10.0 %]
+	TLS Cert About To Expire                     1 [ 2.5 %]
+	Error Code                                   8 [20.0 %]
+	Unidirectional Traffic                      11 [27.5 %]
+	ALPN/SNI Mismatch                            2 [ 5.0 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

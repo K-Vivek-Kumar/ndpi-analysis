@@ -1,0 +1,67 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/no_sni.pcap...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           11.20 MB     
+	Peak Memory:             11.20 MB     
+	Setup Time:              19 msec
+	Packet Processing Time:  0 msec
+
+Traffic statistics:
+	Ethernet bytes:        92743         (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            442           of 442 packets total
+	IP bytes:              82135         (avg pkt size 185 bytes)
+	Unique flows:          8            
+	TCP Packets:           442          
+	UDP Packets:           0            
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       1480         
+	Packet Len < 64:       270          
+	Packet Len 64-128:     67           
+	Packet Len 128-256:    38           
+	Packet Len 256-1024:   48           
+	Packet Len 1024-1500:  19           
+	Packet Len > 1500:     0            
+	nDPI throughput:       550.44 K pps / 881.16 Mb/sec
+	Analysis begin:        08/Nov/2020 13:30:44
+	Analysis end:          08/Nov/2020 13:30:48
+	Traffic throughput:    109.16 pps / 178.94 Kb/sec
+	Traffic duration:      4.049 sec
+	DPI Packets (TCP):     51            (6.38 pkts/flow)
+	Confidence: DPI        8             (flows)
+
+
+Detected protocols:
+	TLS                  packets: 174           bytes: 50253         flows: 7            
+	DoH_DoT              packets: 268           bytes: 31882         flows: 1            
+
+
+Protocol statistics:
+	Safe                 packets: 174           bytes: 50253         flows: 7            
+	Acceptable           packets: 268           bytes: 31882         flows: 1            
+
+Risk stats [found 4 (50.0 %) flows with risks]:
+	Missing SNI TLS Extn                         4 [33.3 %]
+	TLS Susp Extn                                4 [33.3 %]
+	ALPN/SNI Mismatch                            4 [33.3 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

@@ -1,0 +1,76 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/nintendo.pcap...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           11.50 MB     
+	Peak Memory:             11.50 MB     
+	Setup Time:              18 msec
+	Packet Processing Time:  1 msec
+
+Traffic statistics:
+	Ethernet bytes:        357057        (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            996           of 1000 packets total
+	IP bytes:              333153        (avg pkt size 333 bytes)
+	Unique flows:          21           
+	TCP Packets:           97           
+	UDP Packets:           869          
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       1380         
+	Packet Len < 64:       95           
+	Packet Len 64-128:     319          
+	Packet Len 128-256:    31           
+	Packet Len 256-1024:   541          
+	Packet Len 1024-1500:  10           
+	Packet Len > 1500:     0            
+	nDPI throughput:       735.06 K pps / 1.96 Gb/sec
+	Analysis begin:        22/Jul/2017 19:18:40
+	Analysis end:          22/Jul/2017 19:19:08
+	Traffic throughput:    35.43 pps / 99.23 Kb/sec
+	Traffic duration:      28.112 sec
+	Guessed flow protos:   6            
+	DPI Packets (TCP):     18            (4.50 pkts/flow)
+	DPI Packets (UDP):     32            (2.13 pkts/flow)
+	DPI Packets (other):   2             (1.00 pkts/flow)
+	Confidence: Match by port 1             (flows)
+	Confidence: DPI        15            (flows)
+	Confidence: Match by IP 5             (flows)
+
+
+Detected protocols:
+	DNS                  packets: 12            bytes: 1550          flows: 3            
+	ICMP                 packets: 30            bytes: 2100          flows: 2            
+	TLS                  packets: 56            bytes: 8595          flows: 2            
+	Nintendo             packets: 878           bytes: 318692        flows: 9            
+	AmazonAWS            packets: 20            bytes: 2216          flows: 5            
+
+
+Protocol statistics:
+	Safe                 packets: 56            bytes: 8595          flows: 2            
+	Acceptable           packets: 62            bytes: 5866          flows: 10           
+	Fun                  packets: 878           bytes: 318692        flows: 9            
+
+Risk stats [found 9 (42.9 %) flows with risks]:
+	TLS (probably) Not Carrying HTTPS            2 [18.2 %]
+	Susp Entropy                                 2 [18.2 %]
+	Unidirectional Traffic                       7 [63.6 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

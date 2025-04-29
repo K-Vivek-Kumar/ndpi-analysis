@@ -1,0 +1,72 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/quic.pcap...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           11.43 MB     
+	Peak Memory:             11.43 MB     
+	Setup Time:              20 msec
+	Packet Processing Time:  0 msec
+
+Traffic statistics:
+	Ethernet bytes:        360998        (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            518           of 518 packets total
+	IP bytes:              348566        (avg pkt size 672 bytes)
+	Unique flows:          10           
+	TCP Packets:           0            
+	UDP Packets:           518          
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       1358         
+	Packet Len < 64:       199          
+	Packet Len 64-128:     17           
+	Packet Len 128-256:    46           
+	Packet Len 256-1024:   44           
+	Packet Len 1024-1500:  212          
+	Packet Len > 1500:     0            
+	nDPI throughput:       782.48 K pps / 4.06 Gb/sec
+	Analysis begin:        09/May/2015 12:42:16
+	Analysis end:          12/May/2016 23:29:14
+	Traffic throughput:    0.00 pps / 0 b/sec
+	Traffic duration:      31920418.000 sec
+	Guessed flow protos:   1            
+	DPI Packets (UDP):     12            (1.20 pkts/flow)
+	Confidence: Match by port 1             (flows)
+	Confidence: DPI        9             (flows)
+
+
+Detected protocols:
+	GMail                packets: 413           bytes: 254874        flows: 1            
+	YouTube              packets: 85            bytes: 76193         flows: 5            
+	Google               packets: 11            bytes: 10063         flows: 2            
+	QUIC                 packets: 9             bytes: 7436          flows: 2            
+
+
+Protocol statistics:
+	Acceptable           packets: 433           bytes: 272373        flows: 5            
+	Fun                  packets: 85            bytes: 76193         flows: 5            
+
+Risk stats [found 2 (20.0 %) flows with risks]:
+	Known Proto on Non Std Port                  1 [25.0 %]
+	Missing SNI TLS Extn                         1 [25.0 %]
+	Susp Entropy                                 1 [25.0 %]
+	Unidirectional Traffic                       1 [25.0 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

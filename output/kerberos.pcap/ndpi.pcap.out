@@ -1,0 +1,70 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/kerberos.pcap...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           11.33 MB     
+	Peak Memory:             11.33 MB     
+	Setup Time:              18 msec
+	Packet Processing Time:  1 msec
+
+Traffic statistics:
+	Ethernet bytes:        30139         (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            77            of 77 packets total
+	IP bytes:              28291         (avg pkt size 367 bytes)
+	Unique flows:          36           
+	TCP Packets:           77           
+	UDP Packets:           0            
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       1472         
+	Packet Len < 64:       3            
+	Packet Len 64-128:     4            
+	Packet Len 128-256:    36           
+	Packet Len 256-1024:   27           
+	Packet Len 1024-1500:  7            
+	Packet Len > 1500:     0            
+	nDPI throughput:       72.23 K pps / 215.71 Mb/sec
+	Analysis begin:        05/Feb/2019 09:08:49
+	Analysis end:          05/Feb/2019 09:09:12
+	Traffic throughput:    3.42 pps / 10.47 Kb/sec
+	Traffic duration:      22.493 sec
+	Guessed flow protos:   23           
+	DPI Packets (TCP):     77            (2.14 pkts/flow)
+	Confidence: Unknown    2             (flows)
+	Confidence: Match by port 23            (flows)
+	Confidence: DPI        11            (flows)
+
+
+Detected protocols:
+	Unknown              packets: 9             bytes: 3031          flows: 2            
+	SMBv23               packets: 6             bytes: 1914          flows: 3            
+	Kerberos             packets: 48            bytes: 19194         flows: 24           
+	LDAP                 packets: 14            bytes: 4152          flows: 7            
+
+
+Protocol statistics:
+	Acceptable           packets: 68            bytes: 25260         flows: 34           
+	Unrated              packets: 9             bytes: 3031          flows: 2            
+
+Risk stats [found 25 (69.4 %) flows with risks]:
+	Susp Entropy                                25 [100.0 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

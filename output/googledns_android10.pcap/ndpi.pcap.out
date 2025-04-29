@@ -1,0 +1,68 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/googledns_android10.pcap...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           11.25 MB     
+	Peak Memory:             11.25 MB     
+	Setup Time:              18 msec
+	Packet Processing Time:  1 msec
+
+Traffic statistics:
+	Ethernet bytes:        145662        (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            532           of 532 packets total
+	IP bytes:              132894        (avg pkt size 249 bytes)
+	Unique flows:          8            
+	TCP Packets:           528          
+	UDP Packets:           0            
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       1450         
+	Packet Len < 64:       263          
+	Packet Len 64-128:     11           
+	Packet Len 128-256:    113          
+	Packet Len 256-1024:   134          
+	Packet Len 1024-1500:  11           
+	Packet Len > 1500:     0            
+	nDPI throughput:       513.02 K pps / 1.05 Gb/sec
+	Analysis begin:        19/Jun/2020 13:17:04
+	Analysis end:          19/Jun/2020 13:21:19
+	Traffic throughput:    2.09 pps / 4.46 Kb/sec
+	Traffic duration:      254.894 sec
+	Guessed flow protos:   2            
+	DPI Packets (TCP):     42            (6.00 pkts/flow)
+	DPI Packets (other):   1             (1.00 pkts/flow)
+	Confidence: Match by port 2             (flows)
+	Confidence: DPI        6             (flows)
+
+
+Detected protocols:
+	ICMP                 packets: 4             bytes: 392           flows: 1            
+	DoH_DoT              packets: 528           bytes: 132502        flows: 7            
+
+
+Protocol statistics:
+	Acceptable           packets: 532           bytes: 132894        flows: 8            
+
+Risk stats [found 6 (75.0 %) flows with risks]:
+	TLS (probably) Not Carrying HTTPS            5 [83.3 %]
+	Susp Entropy                                 1 [16.7 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

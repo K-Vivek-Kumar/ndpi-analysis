@@ -1,0 +1,71 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/fuzz-2020-02-16-11740.pcap...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           11.64 MB     
+	Peak Memory:             11.64 MB     
+	Setup Time:              18 msec
+	Packet Processing Time:  1 msec
+
+Traffic statistics:
+	Ethernet bytes:        149154        (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       19066        
+	IP packets:            299           of 366 packets total
+	IP bytes:              141978        (avg pkt size 387 bytes)
+	Unique flows:          74           
+	TCP Packets:           0            
+	UDP Packets:           292          
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    22           
+	Max Packet size:       842          
+	Packet Len < 64:       0            
+	Packet Len 64-128:     7            
+	Packet Len 128-256:    115          
+	Packet Len 256-1024:   177          
+	Packet Len 1024-1500:  0            
+	Packet Len > 1500:     0            
+	nDPI throughput:       249.17 K pps / 948.30 Mb/sec
+	Analysis begin:        14/Jun/2018 22:37:47
+	Analysis end:          14/Jun/2018 23:20:43
+	Traffic throughput:    0.12 pps / 463 b/sec
+	Traffic duration:      2575.543 sec
+	Guessed flow protos:   3            
+	DPI Packets (UDP):     67            (1.00 pkts/flow)
+	DPI Packets (other):   7             (1.00 pkts/flow)
+	Confidence: Unknown    19            (flows)
+	Confidence: Match by port 3             (flows)
+	Confidence: DPI        52            (flows)
+
+
+Detected protocols:
+	Unknown              packets: 19            bytes: 6603          flows: 19           
+	VRRP                 packets: 1             bytes: 725           flows: 1            
+	Radius               packets: 279           bytes: 134650        flows: 54           
+
+
+Protocol statistics:
+	Acceptable           packets: 280           bytes: 135375        flows: 55           
+	Unrated              packets: 19            bytes: 6603          flows: 19           
+
+Risk stats [found 68 (91.9 %) flows with risks]:
+	Susp Entropy                                11 [13.9 %]
+	Unidirectional Traffic                      68 [86.1 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

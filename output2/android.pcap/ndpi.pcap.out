@@ -1,0 +1,86 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/android.pcap...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           11.71 MB     
+	Peak Memory:             11.71 MB     
+	Setup Time:              18 msec
+	Packet Processing Time:  1 msec
+
+Traffic statistics:
+	Ethernet bytes:        143354        (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            475           of 500 packets total
+	IP bytes:              131954        (avg pkt size 263 bytes)
+	Unique flows:          63           
+	TCP Packets:           398          
+	UDP Packets:           70           
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       1450         
+	Packet Len < 64:       284          
+	Packet Len 64-128:     51           
+	Packet Len 128-256:    21           
+	Packet Len 256-1024:   80           
+	Packet Len 1024-1500:  39           
+	Packet Len > 1500:     0            
+	nDPI throughput:       295.21 K pps / 679.74 Mb/sec
+	Analysis begin:        23/Feb/2020 16:16:09
+	Analysis end:          23/Feb/2020 16:17:52
+	Traffic throughput:    4.64 pps / 10.95 Kb/sec
+	Traffic duration:      102.275 sec
+	Guessed flow protos:   3            
+	DPI Packets (TCP):     147           (5.25 pkts/flow)
+	DPI Packets (UDP):     52            (1.68 pkts/flow)
+	DPI Packets (other):   4             (1.00 pkts/flow)
+	Confidence: Match by port 2             (flows)
+	Confidence: DPI        60            (flows)
+	Confidence: Match by IP 1             (flows)
+
+
+Detected protocols:
+	DNS                  packets: 42            bytes: 3884          flows: 21           
+	HTTP                 packets: 3             bytes: 214           flows: 1            
+	MDNS                 packets: 2             bytes: 174           flows: 2            
+	NTP                  packets: 2             bytes: 180           flows: 1            
+	SSDP                 packets: 2             bytes: 336           flows: 2            
+	DHCP                 packets: 14            bytes: 4772          flows: 2            
+	DataSaver            packets: 99            bytes: 24930         flows: 6            
+	TLS                  packets: 25            bytes: 2946          flows: 5            
+	ICMPV6               packets: 7             bytes: 578           flows: 4            
+	DHCPV6               packets: 2             bytes: 228           flows: 1            
+	Dropbox              packets: 3             bytes: 1656          flows: 1            
+	Google               packets: 171           bytes: 57949         flows: 9            
+	Apple                packets: 11            bytes: 1660          flows: 1            
+	Spotify              packets: 3             bytes: 258           flows: 1            
+	PlayStore            packets: 79            bytes: 29045         flows: 4            
+	GoogleServices       packets: 10            bytes: 3144          flows: 2            
+
+
+Protocol statistics:
+	Safe                 packets: 115           bytes: 33651         flows: 10           
+	Acceptable           packets: 258           bytes: 73115         flows: 46           
+	Fun                  packets: 102           bytes: 25188         flows: 7            
+
+Risk stats [found 12 (19.0 %) flows with risks]:
+	TLS (probably) Not Carrying HTTPS            5 [41.7 %]
+	Unidirectional Traffic                       7 [58.3 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

@@ -1,0 +1,66 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/EAQ.pcap...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           11.24 MB     
+	Peak Memory:             11.24 MB     
+	Setup Time:              18 msec
+	Packet Processing Time:  0 msec
+
+Traffic statistics:
+	Ethernet bytes:        26563         (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            197           of 197 packets total
+	IP bytes:              21835         (avg pkt size 110 bytes)
+	Unique flows:          31           
+	TCP Packets:           23           
+	UDP Packets:           174          
+	VLAN Packets:          0            
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       2784         
+	Packet Len < 64:       190          
+	Packet Len 64-128:     1            
+	Packet Len 128-256:    1            
+	Packet Len 256-1024:   1            
+	Packet Len 1024-1500:  1            
+	Packet Len > 1500:     3            
+	nDPI throughput:       217.44 K pps / 223.69 Mb/sec
+	Analysis begin:        28/May/2015 19:19:08
+	Analysis end:          28/May/2015 19:20:45
+	Traffic throughput:    2.03 pps / 2.14 Kb/sec
+	Traffic duration:      97.102 sec
+	DPI Packets (TCP):     12            (6.00 pkts/flow)
+	DPI Packets (UDP):     116           (4.00 pkts/flow)
+	Confidence: DPI        31            (flows)
+
+
+Detected protocols:
+	Google               packets: 23            bytes: 11743         flows: 2            
+	EAQ                  packets: 174           bytes: 10092         flows: 29           
+
+
+Protocol statistics:
+	Acceptable           packets: 197           bytes: 21835         flows: 31           
+
+Risk stats [found 23 (74.2 %) flows with risks]:
+	HTTP Susp User-Agent                         2 [ 8.7 %]
+	Unidirectional Traffic                      21 [91.3 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+

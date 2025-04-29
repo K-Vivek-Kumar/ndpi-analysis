@@ -1,0 +1,73 @@
+
+-----------------------------------------------------------
+* NOTE: This is demo app to show *some* nDPI features.
+* In this demo we have implemented only some basic features
+* just to show you what you can do with the library. Feel 
+* free to extend it and send us the patches for inclusion
+------------------------------------------------------------
+
+Using nDPI (4.13.0-5225-2e7b75a) [1 thread(s)]
+Using libgcrypt version 1.8.6internal
+Reading packets from pcap file ./tests/cfgs/default/pcap/stun.pcap...
+Running thread 0...
+
+nDPI Memory statistics:
+	nDPI Memory (once):      42.82 KB     
+	Flow Memory (per flow):  1.15 KB      
+	Actual Memory:           11.12 MB     
+	Peak Memory:             11.12 MB     
+	Setup Time:              20 msec
+	Packet Processing Time:  0 msec
+
+Traffic statistics:
+	Ethernet bytes:        33652         (includes ethernet CRC/IFC/trailer)
+	Discarded bytes:       0            
+	IP packets:            201           of 201 packets total
+	IP bytes:              28828         (avg pkt size 143 bytes)
+	Unique flows:          9            
+	TCP Packets:           35           
+	UDP Packets:           165          
+	VLAN Packets:          15           
+	MPLS Packets:          0            
+	PPPoE Packets:         0            
+	Fragmented Packets:    0            
+	Max Packet size:       1206         
+	Packet Len < 64:       71           
+	Packet Len 64-128:     72           
+	Packet Len 128-256:    54           
+	Packet Len 256-1024:   3            
+	Packet Len 1024-1500:  1            
+	Packet Len > 1500:     0            
+	nDPI throughput:       370.85 K pps / 473.70 Mb/sec
+	Analysis begin:        17/Sep/2019 16:39:59
+	Analysis end:          16/Oct/2023 20:38:33
+	Traffic throughput:    0.00 pps / 0 b/sec
+	Traffic duration:      128750312.000 sec
+	DPI Packets (TCP):     17            (8.50 pkts/flow)
+	DPI Packets (UDP):     45            (7.50 pkts/flow)
+	DPI Packets (other):   1             (1.00 pkts/flow)
+	Confidence: DPI        9             (flows)
+
+
+Detected protocols:
+	DTLS                 packets: 4             bytes: 766           flows: 1            
+	TeamsCall            packets: 15            bytes: 2124          flows: 1            
+	STUN                 packets: 65            bytes: 8034          flows: 3            
+	ICMP                 packets: 1             bytes: 122           flows: 1            
+	FacebookVoip         packets: 75            bytes: 10554         flows: 1            
+	GoogleCall           packets: 41            bytes: 7228          flows: 2            
+
+
+Protocol statistics:
+	Safe                 packets: 4             bytes: 766           flows: 1            
+	Acceptable           packets: 197           bytes: 28062         flows: 8            
+
+Risk stats [found 3 (33.3 %) flows with risks]:
+	Known Proto on Non Std Port                  1 [25.0 %]
+	Susp Entropy                                 1 [25.0 %]
+	Unidirectional Traffic                       2 [50.0 %]
+
+	NOTE: as one flow can have multiple risks set, the sum of the
+	      last column can exceed the number of flows with risks.
+
+
